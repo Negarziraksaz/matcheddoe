@@ -1,0 +1,64 @@
+{
+  "project": "matcheddoe",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "checks": [
+    {
+      "check": "lint",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "format",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "check": "tests",
+      "returncode": 0,
+      "status": "PASS"
+    }
+  ],
+  "snapshot_unchanged": true,
+  "source_test_hashes": {
+    "src/matcheddoe/capabilities.py": "5b3ef6ea4ed96b17b080de3418497f4ee71b0853b6005a953b08ee47efec5f15",
+    "src/matcheddoe/cli.py": "40234cd387d22b3b5555294f5070323e51ada6c606e48122268e195fc981bf2e",
+    "src/matcheddoe/common.py": "c6bdf4d75ea68ae5f5c6e472f3845515d6da9d4d16757ba6ebfee16b568a58be",
+    "src/matcheddoe/contract.py": "3c31e62913e2ef7460270bed8af9c2cfa7c558896115c80828e1d0b22b3a8145",
+    "src/matcheddoe/core.py": "d192c43ec70a2ac0c10b4436707665caccf73217d40c0407839a05cb7654a4f5",
+    "src/matcheddoe/diagnostics.py": "8b14c0ba923d1f28821494e2b2e392a85e517d41766bf9b7c2267d3997a4246f",
+    "src/matcheddoe/equations.py": "a6d07402c6aefcd689d599edc4597b0b5263f2712b2973152580eeb41dcf31fb",
+    "src/matcheddoe/importing.py": "c372f0959e33bbf8803f8ade5313e5b069106711e4f8d13378d60671d5e57f3f",
+    "src/matcheddoe/presentation.py": "597589219782ce7858a4c3c1f972f15271b602937b86f329d0ec09f727955425",
+    "src/matcheddoe/reporting.py": "305f87d27f1d4f23b414cf2de5790e6db853e099c11f787d25ded69f42f4f97c",
+    "src/matcheddoe/result_reader.py": "e910f8979ba2ae3f193987a139c9f2a4496facfc8d4a7583f80cbb9ba28ea126",
+    "src/matcheddoe/templates.py": "7d975154d051ce05fb1a62aa5495b114d8117d8755bbf83ad5b1fa63e2d0c4d3",
+    "src/matcheddoe/ui.py": "57c4e4438968e7ec6c37b82e3af375b16a7fdd24b144e7e5fdcaba4559a2e754",
+    "src/matcheddoe/visuals.py": "c09f8f6977365ff316c4d0da24e5d21b32799976afd08324d9dbb06db015ec27",
+    "src/matcheddoe/web_entry.py": "c6bf06732263e8fffb31b99efff1a793164dc2b396d7f867e8e86c92d56b916f",
+    "src/matcheddoe/workbench.py": "406fbbb1aef407664aec2af0a06773bb9703d87e6750030f4b110af33a6272f4",
+    "src/matcheddoe/workbook.py": "47d8bfd124f5fa253ad1fa53d25fdb6acbf1575dc97ff101d4d8656008967919",
+    "src/matcheddoe/__init__.py": "eada4b4a521ad5dcb81318e6336b88b582ba269752d527eaba0e15cb7d804936",
+    "src/matcheddoe/__main__.py": "482b8693e2fe6dbd732e3d7961e03827d3efa187bad11d29da188be580ebbeea",
+    "tests/test_analysis.py": "8a3179e6a3d071d9e96637a6943b70bd1813fa30d246824a5f2ebc3a62b9c5d0",
+    "tests/test_closeout.py": "3a3b82feff80c6bc7316733bc67e92a3e1b3f44c09cb9434924c990ad58e04ea",
+    "tests/test_common.py": "0d680f2ad3cac08f841da3cce1d0f66988a862c796d5ea3dcd42e4b2869a61df",
+    "tests/test_diagnostics.py": "8b2e5fc2423c86447fd8edecbdc34796c18b9a790e30310796d27316a87170b3",
+    "tests/test_hosting.py": "8fd4d9039653faec5901c9a664b943ce2cc2a19b36ad7eac486ea5d86612124f",
+    "tests/test_remediation.py": "11c0336d4c97bc298eb23dbfdfde0ef147f1cb1bf4e89e305fea4067a6218d82",
+    "tests/test_result_reader.py": "8ea9a45b6cf2ca17c0f8a326da7baa4773584eed45551a1a56ebdfdf17590ceb",
+    "tests/test_scope_and_exports.py": "1200af975f26cc9f74983e2628b31b5b1ecdfd337f31cc3ec2cdf6ab6fcb9919",
+    "tests/test_ui.py": "3c2df48b952d630d01ce318142a2cb6163a41e4b402f2fd6d85bd8a208e567ce",
+    "tests/test_v051.py": "9477185b70f424b72f8ac056dd14b2a2503aa839181e76bdc86f37b99b9b13b4"
+  },
+  "junit_privacy_note": "Machine hostname removed; test cases and outcomes unchanged.",
+  "environment": {
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "streamlit": "1.63.0",
+    "matplotlib": "3.11.1",
+    "reportlab": "4.5.1",
+    "pytest": "9.1.1"
+  }
+}
