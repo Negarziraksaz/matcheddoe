@@ -1,0 +1,1 @@
+Fitted values on the common supported grid; pH fixed at 7. Open circles mark 7 observed settings in this plane. Blank cells are outside the observed design hull. The pixel boundaries show grid cells; predictions are defined at the grid centres. No independent confirmation or continuous optimum is implied.

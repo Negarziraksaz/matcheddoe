@@ -1,0 +1,363 @@
+{
+  "title": "MatchedDoE — response surfaces at matched conditions",
+  "status": "complete",
+  "settings": {
+    "input_sha256": "12f0b29df96c30c96910a8cb38a7103cb7933898b25de17b8d481bdc8e0cd4e1",
+    "factors": [
+      "dose_g_L",
+      "concentration_ppm",
+      "pH"
+    ],
+    "candidate_columns": {
+      "factors": {
+        "dose_g_L": "factor::dose_g_L",
+        "concentration_ppm": "factor::concentration_ppm",
+        "pH": "factor::pH"
+      },
+      "predictions": {
+        "response": "prediction::response"
+      }
+    },
+    "responses": [
+      "response"
+    ],
+    "model": "2fi",
+    "response_mode": "matched",
+    "grid_points_per_factor": 21,
+    "independent_runs_confirmed": true,
+    "candidate_status": "supported finite grid",
+    "software_source_sha256": "5c0dc36342d076126ecf4ab93b52c252873a213223e17ec732d253218d62a267",
+    "source_hash_definition": "SHA256 of sorted relative Python paths and file bytes, each terminated by a NUL byte",
+    "application": "matcheddoe",
+    "software_version": "0.5.2",
+    "configuration_schema_version": "1.2",
+    "call_parameters": {
+      "factors": [
+        "dose_g_L",
+        "concentration_ppm",
+        "pH"
+      ],
+      "responses": [
+        "response"
+      ],
+      "id_col": "sample_id",
+      "model": "2fi",
+      "directions": {
+        "response": "maximise"
+      },
+      "grid_points": 21,
+      "independent_runs": true,
+      "reported_equations": null,
+      "response_mode": "matched",
+      "max_design_cells": 2000000,
+      "max_grid_candidates": 100000,
+      "column_metadata": {
+        "response": {
+          "label": "Levofloxacin removal",
+          "unit": "%"
+        },
+        "dose_g_L": {
+          "label": "Adsorbent dose",
+          "unit": "g/L"
+        },
+        "concentration_ppm": {
+          "label": "Initial concentration",
+          "unit": "ppm"
+        },
+        "pH": {
+          "label": "pH",
+          "unit": "dimensionless"
+        }
+      },
+      "input_name": "levo_design.csv",
+      "provenance": {
+        "kind": "bundled_example",
+        "example": "levo_design.csv"
+      }
+    },
+    "input_name": "levo_design.csv",
+    "columns": {
+      "sample_id": {
+        "label": "sample_id",
+        "unit": "not provided"
+      },
+      "dose_g_L": {
+        "label": "Adsorbent dose",
+        "unit": "g/L"
+      },
+      "concentration_ppm": {
+        "label": "Initial concentration",
+        "unit": "ppm"
+      },
+      "pH": {
+        "label": "pH",
+        "unit": "dimensionless"
+      },
+      "response": {
+        "label": "Levofloxacin removal",
+        "unit": "%"
+      }
+    },
+    "provenance": {
+      "kind": "bundled_example",
+      "example": "levo_design.csv",
+      "original_source": {
+        "id": "D03",
+        "repository_id": "v28r4bz6s5",
+        "version": 1,
+        "title": "Dataset on photocatalytic degradation of LEVO using HAp photocatalyst Optimization by RSM",
+        "creators": [
+          "Adrian Go",
+          "Francis dela Rosa",
+          "Drexel Camacho",
+          "Eric Punzalan"
+        ],
+        "doi": "10.17632/v28r4bz6s5.1",
+        "source_url": "https://data.mendeley.com/datasets/v28r4bz6s5/1",
+        "license": "CC-BY-4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "checked_on": "2026-09-07",
+        "raw_data_included_in_delivery": false,
+        "downloads": [
+          {
+            "file": "LEVO_RSM.xlsx",
+            "url": "https://data.mendeley.com/public-files/datasets/v28r4bz6s5/files/6a351c2a-3cf8-4b5c-88cf-578e30c8944a/file_downloaded",
+            "bytes": 314914,
+            "sha256": "9d04295ae8e7d66f4feaf3eef83135e02b1e84e1156a74fd148fff686e52d5ba"
+          }
+        ],
+        "processed_examples_included": true,
+        "equivalent_cited_deposit": {
+          "doi": "10.17632/h82gspgkpf.2",
+          "source_url": "https://data.mendeley.com/datasets/h82gspgkpf/2",
+          "relationship": "P30 cites this deposit. Its public file metadata gives the same SHA256 and 314914-byte workbook as the bundled source deposit.",
+          "metadata_checked_on": "2026-09-07"
+        }
+      },
+      "transformations": "15 measured BBD Model sheet runs; dose, concentration and pH copied in actual units. Inconsistent printed interaction labels and confirmation claims excluded. Only two pure-error degrees of freedom.",
+      "column_metadata": {
+        "response": {
+          "label": "Levofloxacin removal",
+          "unit": "%"
+        },
+        "dose_g_L": {
+          "label": "Adsorbent dose",
+          "unit": "g/L"
+        },
+        "concentration_ppm": {
+          "label": "Initial concentration",
+          "unit": "ppm"
+        },
+        "pH": {
+          "label": "pH",
+          "unit": "dimensionless"
+        }
+      },
+      "prepared_csv_sha256": "4cc7623266600a3638934534ec4a45dead7985c40a35256b10f4ad7e021949b2",
+      "code_license": "MIT",
+      "data_license": "CC-BY-4.0"
+    },
+    "input_hash_definition": "SHA256 of parsed table serialized as canonical CSV; not original file bytes",
+    "n_input_rows": 15,
+    "computation_status": "completed",
+    "evidence_status": "complete",
+    "deterministic_protocol": {
+      "evaluation": "in-sample fitted design",
+      "candidate_grid_points_per_factor": 21
+    },
+    "input_preparation": {
+      "generated_row_id": null,
+      "row_id_meaning": "Source observation ID",
+      "import": {
+        "worksheet": null,
+        "header_row": 1,
+        "separator": ",",
+        "encoding": "utf-8-sig",
+        "notices": [],
+        "decimal": ".",
+        "missing_tokens": [],
+        "column_mapping": [
+          {
+            "position": 1,
+            "source_header": "sample_id",
+            "analysis_header": "sample_id"
+          },
+          {
+            "position": 2,
+            "source_header": "dose_g_L",
+            "analysis_header": "dose_g_L"
+          },
+          {
+            "position": 3,
+            "source_header": "concentration_ppm",
+            "analysis_header": "concentration_ppm"
+          },
+          {
+            "position": 4,
+            "source_header": "pH",
+            "analysis_header": "pH"
+          },
+          {
+            "position": 5,
+            "source_header": "response",
+            "analysis_header": "response"
+          }
+        ],
+        "max_cells": 2000000,
+        "max_bytes": 52428800
+      },
+      "original_parsed_input_sha256": "12f0b29df96c30c96910a8cb38a7103cb7933898b25de17b8d481bdc8e0cd4e1"
+    },
+    "diagnostics": [
+      {
+        "table": "group_diagnostics",
+        "question": "Which physical groups have the largest errors?",
+        "interpretation": "One summary per method and physical group; group means and within-group RMSE are different quantities. No rows are excluded.",
+        "rows": 15
+      },
+      {
+        "table": "reference_range_diagnostics",
+        "question": "Does error vary across the measured response range?",
+        "interpretation": "Up to four shared reference-quantile bins, determined after prediction for diagnosis only. Bin counts and group counts are retained; no uncertainty is inferred.",
+        "rows": 4
+      },
+      {
+        "table": "influence_diagnostics",
+        "question": "Are fitted coefficients sensitive to a particular observed run?",
+        "interpretation": "Internal studentization and Cook's distance require estimable residual variance and the independence declaration. 4/n is a review heuristic, never an automatic removal rule.",
+        "rows": 15
+      }
+    ],
+    "capabilities": [
+      {
+        "capability": "input_quality",
+        "available": true,
+        "level": "descriptive",
+        "reason": "Parsed rows and selected field availability are retained."
+      },
+      {
+        "capability": "paired_descriptions",
+        "available": true,
+        "level": "descriptive",
+        "reason": "Available finite reference/comparison pairs; no missing reference is invented."
+      },
+      {
+        "capability": "fitted_model",
+        "available": true,
+        "level": "fitting",
+        "reason": "Rank-supported coefficients are available."
+      },
+      {
+        "capability": "held_out_evaluation",
+        "available": false,
+        "level": "evaluation",
+        "reason": "No held-out model evaluation is supported by this run."
+      },
+      {
+        "capability": "conditional_uncertainty",
+        "available": true,
+        "level": "inference",
+        "reason": "Only the stated estimand and confirmed independence/variance assumptions support these intervals."
+      }
+    ],
+    "evidence_summary": "Results with conditional uncertainty; review assumptions",
+    "import_options": {},
+    "export_config": {
+      "factors": [
+        "dose_g_L",
+        "concentration_ppm",
+        "pH"
+      ],
+      "responses": [
+        "response"
+      ],
+      "id_col": "sample_id",
+      "model": "2fi",
+      "directions": {
+        "response": "maximise"
+      },
+      "grid_points": 21,
+      "independent_runs": true,
+      "reported_equations": null,
+      "response_mode": "matched",
+      "max_design_cells": 2000000,
+      "max_grid_candidates": 100000,
+      "column_metadata": {
+        "response": {
+          "label": "Levofloxacin removal",
+          "unit": "%"
+        },
+        "dose_g_L": {
+          "label": "Adsorbent dose",
+          "unit": "g/L"
+        },
+        "concentration_ppm": {
+          "label": "Initial concentration",
+          "unit": "ppm"
+        },
+        "pH": {
+          "label": "pH",
+          "unit": "dimensionless"
+        }
+      },
+      "input_name": "levo_design.csv",
+      "provenance": {
+        "kind": "bundled_example",
+        "example": "levo_design.csv"
+      },
+      "import_options": {}
+    }
+  },
+  "notes": [
+    "All responses use the same complete observed runs and the same candidate conditions. Missing responses and missing factor settings are never imputed.",
+    "Coefficient inference assumes independent errors with constant variance and a suitable response-surface form. Repeated factor settings are treated as independent experimental replicates only if that is how they were collected.",
+    "Candidate maxima/minima are predictions on a finite grid inside the observed convex hull. They are not measured confirmations or guaranteed continuous optima.",
+    "Pointwise prediction intervals are conditional on the fitted polynomial and normal-error assumptions; intervals at selected optima do not account for the search or model selection."
+  ],
+  "environment": {
+    "python": "3.14.7",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "streamlit": "1.63.0"
+  },
+  "created_utc": "2026-09-08T14:24:42.809675+00:00",
+  "export_profile": {
+    "figure_formats": [
+      "png",
+      "pdf",
+      "svg"
+    ],
+    "png_dpi": 300
+  },
+  "tables": {
+    "input_audit": 5,
+    "excluded_runs": 0,
+    "observed_factor_values": 45,
+    "factor_coding": 3,
+    "design_check": 1,
+    "model_support": 4,
+    "candidate_column_labels": 4,
+    "coefficients": 7,
+    "model_summary": 1,
+    "anova": 3,
+    "equation_comparison": 0,
+    "predictions": 15,
+    "candidates": 7501,
+    "selected_candidates": 1,
+    "group_diagnostics": 15,
+    "reference_range_diagnostics": 4,
+    "influence_diagnostics": 15,
+    "capabilities": 5
+  },
+  "application": "matcheddoe",
+  "software_version": "0.5.2",
+  "configuration_schema_version": "1.2",
+  "computation_status": "completed",
+  "export_status": "completed",
+  "evidence_status": "Results with conditional uncertainty; review assumptions"
+}

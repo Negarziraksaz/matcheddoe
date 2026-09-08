@@ -1,0 +1,50 @@
+{
+  "kind": "bundled_example",
+  "example": "banana_design.csv",
+  "original_source": {
+    "id": "D05",
+    "repository_id": "87tfjn5s2h",
+    "version": 1,
+    "title": "Data from greenhouse solar drying using response surface methodology for the production of dried banana",
+    "creators": [
+      "Nopparat Suriyachai"
+    ],
+    "doi": "10.17632/87tfjn5s2h.1",
+    "source_url": "https://data.mendeley.com/datasets/87tfjn5s2h/1",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "checked_on": "2026-09-07",
+    "raw_data_included_in_delivery": false,
+    "downloads": [
+      {
+        "file": "Data accessibility.xlsx",
+        "url": "https://data.mendeley.com/public-files/datasets/87tfjn5s2h/files/c558268a-0c15-43f0-8598-b7f7b6a38d02/file_downloaded",
+        "bytes": 331168,
+        "sha256": "fc89166d2b63e68b398699b79bb75212d23247ffad5a92e2ef10259990c61d97"
+      }
+    ],
+    "processed_examples_included": true
+  },
+  "transformations": "Nine distinct Data and Design settings; time=36+12*coded_time, temperature=50+5*coded_temperature; deposited moisture and colour responses. No independent repeated treatment settings; no pure-error estimate.",
+  "column_metadata": {
+    "moisture_percent": {
+      "label": "Moisture content",
+      "unit": "%"
+    },
+    "colour_deltaE": {
+      "label": "Colour change",
+      "unit": "Delta E"
+    },
+    "time_h": {
+      "label": "Drying time",
+      "unit": "h"
+    },
+    "temperature_C": {
+      "label": "Drying temperature",
+      "unit": "deg C"
+    }
+  },
+  "prepared_csv_sha256": "d92dc8b0cce05ba05c16987e7f4c94a99e83fa997944b8a8b45d2c6c29e62fbe",
+  "code_license": "MIT",
+  "data_license": "CC-BY-4.0"
+}

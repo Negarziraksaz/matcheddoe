@@ -1,0 +1,16 @@
+{
+  "slug": "matcheddoe",
+  "owner": "Negarziraksaz",
+  "person": "Negar Ziraksaz",
+  "title": "MatchedDoE",
+  "summary": "Fit estimable response surfaces, check replication and compare responses at the same supported conditions.",
+  "examples": [
+    "levo_design.csv",
+    "banana_design.csv"
+  ],
+  "preparation": [],
+  "data_ids": [
+    "D03",
+    "D05"
+  ]
+}

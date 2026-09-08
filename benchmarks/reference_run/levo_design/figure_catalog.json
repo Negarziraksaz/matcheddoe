@@ -1,0 +1,22 @@
+[
+  {
+    "stem": "figure",
+    "title": "Analysis overview",
+    "caption": "Figure 1. In-sample fit and residuals for response; these panels do not show independent prediction validation. All responses are retained in the result tables."
+  },
+  {
+    "stem": "diagnostic_coefficients",
+    "title": "Coded coefficient estimates",
+    "caption": "Dots show coefficients for non-intercept terms. Lines are the existing pointwise 95% coefficient intervals where estimable and independence was declared. An absent interval is not zero uncertainty. Full coefficients, including intercept, are retained in coefficients.csv."
+  },
+  {
+    "stem": "diagnostic_surface_1",
+    "title": "Supported response surface - response",
+    "caption": "Fitted values on the common supported grid; pH fixed at 7. Open circles mark 7 observed settings in this plane. Blank cells are outside the observed design hull. The pixel boundaries show grid cells; predictions are defined at the grid centres. No independent confirmation or continuous optimum is implied."
+  },
+  {
+    "stem": "diagnostic_influence",
+    "title": "Observed-run influence",
+    "caption": "Cook's distance measures fitted-model sensitivity under its assumptions. The 4/n line is a screening heuristic only; no observation is automatically removed. Internal studentization and leverage are exported in influence_diagnostics.csv."
+  }
+]

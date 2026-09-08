@@ -1,0 +1,364 @@
+{
+  "title": "MatchedDoE — response surfaces at matched conditions",
+  "status": "complete",
+  "settings": {
+    "input_sha256": "501f23ba65f6e83efc8fc5a4019a13097d897727118051d4dd88f68de77e5682",
+    "factors": [
+      "time_h",
+      "temperature_C"
+    ],
+    "candidate_columns": {
+      "factors": {
+        "time_h": "factor::time_h",
+        "temperature_C": "factor::temperature_C"
+      },
+      "predictions": {
+        "moisture_percent": "prediction::moisture_percent",
+        "colour_deltaE": "prediction::colour_deltaE"
+      }
+    },
+    "responses": [
+      "moisture_percent",
+      "colour_deltaE"
+    ],
+    "model": "additive_quadratic",
+    "response_mode": "matched",
+    "grid_points_per_factor": 21,
+    "independent_runs_confirmed": true,
+    "candidate_status": "supported finite grid",
+    "software_source_sha256": "5c0dc36342d076126ecf4ab93b52c252873a213223e17ec732d253218d62a267",
+    "source_hash_definition": "SHA256 of sorted relative Python paths and file bytes, each terminated by a NUL byte",
+    "application": "matcheddoe",
+    "software_version": "0.5.2",
+    "configuration_schema_version": "1.2",
+    "call_parameters": {
+      "factors": [
+        "time_h",
+        "temperature_C"
+      ],
+      "responses": [
+        "moisture_percent",
+        "colour_deltaE"
+      ],
+      "id_col": "sample_id",
+      "model": "additive_quadratic",
+      "directions": {
+        "moisture_percent": "minimise",
+        "colour_deltaE": "minimise"
+      },
+      "grid_points": 21,
+      "independent_runs": true,
+      "reported_equations": null,
+      "response_mode": "matched",
+      "max_design_cells": 2000000,
+      "max_grid_candidates": 100000,
+      "column_metadata": {
+        "moisture_percent": {
+          "label": "Moisture content",
+          "unit": "%"
+        },
+        "colour_deltaE": {
+          "label": "Colour change",
+          "unit": "Delta E"
+        },
+        "time_h": {
+          "label": "Drying time",
+          "unit": "h"
+        },
+        "temperature_C": {
+          "label": "Drying temperature",
+          "unit": "deg C"
+        }
+      },
+      "input_name": "banana_design.csv",
+      "provenance": {
+        "kind": "bundled_example",
+        "example": "banana_design.csv"
+      }
+    },
+    "input_name": "banana_design.csv",
+    "columns": {
+      "sample_id": {
+        "label": "sample_id",
+        "unit": "not provided"
+      },
+      "time_h": {
+        "label": "Drying time",
+        "unit": "h"
+      },
+      "temperature_C": {
+        "label": "Drying temperature",
+        "unit": "deg C"
+      },
+      "moisture_percent": {
+        "label": "Moisture content",
+        "unit": "%"
+      },
+      "colour_deltaE": {
+        "label": "Colour change",
+        "unit": "Delta E"
+      }
+    },
+    "provenance": {
+      "kind": "bundled_example",
+      "example": "banana_design.csv",
+      "original_source": {
+        "id": "D05",
+        "repository_id": "87tfjn5s2h",
+        "version": 1,
+        "title": "Data from greenhouse solar drying using response surface methodology for the production of dried banana",
+        "creators": [
+          "Nopparat Suriyachai"
+        ],
+        "doi": "10.17632/87tfjn5s2h.1",
+        "source_url": "https://data.mendeley.com/datasets/87tfjn5s2h/1",
+        "license": "CC-BY-4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "checked_on": "2026-09-07",
+        "raw_data_included_in_delivery": false,
+        "downloads": [
+          {
+            "file": "Data accessibility.xlsx",
+            "url": "https://data.mendeley.com/public-files/datasets/87tfjn5s2h/files/c558268a-0c15-43f0-8598-b7f7b6a38d02/file_downloaded",
+            "bytes": 331168,
+            "sha256": "fc89166d2b63e68b398699b79bb75212d23247ffad5a92e2ef10259990c61d97"
+          }
+        ],
+        "processed_examples_included": true
+      },
+      "transformations": "Nine distinct Data and Design settings; time=36+12*coded_time, temperature=50+5*coded_temperature; deposited moisture and colour responses. No independent repeated treatment settings; no pure-error estimate.",
+      "column_metadata": {
+        "moisture_percent": {
+          "label": "Moisture content",
+          "unit": "%"
+        },
+        "colour_deltaE": {
+          "label": "Colour change",
+          "unit": "Delta E"
+        },
+        "time_h": {
+          "label": "Drying time",
+          "unit": "h"
+        },
+        "temperature_C": {
+          "label": "Drying temperature",
+          "unit": "deg C"
+        }
+      },
+      "prepared_csv_sha256": "d92dc8b0cce05ba05c16987e7f4c94a99e83fa997944b8a8b45d2c6c29e62fbe",
+      "code_license": "MIT",
+      "data_license": "CC-BY-4.0"
+    },
+    "input_hash_definition": "SHA256 of parsed table serialized as canonical CSV; not original file bytes",
+    "n_input_rows": 9,
+    "computation_status": "completed",
+    "evidence_status": "complete",
+    "deterministic_protocol": {
+      "evaluation": "in-sample fitted design",
+      "candidate_grid_points_per_factor": 21
+    },
+    "input_preparation": {
+      "generated_row_id": null,
+      "row_id_meaning": "Source observation ID",
+      "import": {
+        "worksheet": null,
+        "header_row": 1,
+        "separator": ",",
+        "encoding": "utf-8-sig",
+        "notices": [],
+        "decimal": ".",
+        "missing_tokens": [],
+        "column_mapping": [
+          {
+            "position": 1,
+            "source_header": "sample_id",
+            "analysis_header": "sample_id"
+          },
+          {
+            "position": 2,
+            "source_header": "time_h",
+            "analysis_header": "time_h"
+          },
+          {
+            "position": 3,
+            "source_header": "temperature_C",
+            "analysis_header": "temperature_C"
+          },
+          {
+            "position": 4,
+            "source_header": "moisture_percent",
+            "analysis_header": "moisture_percent"
+          },
+          {
+            "position": 5,
+            "source_header": "colour_deltaE",
+            "analysis_header": "colour_deltaE"
+          }
+        ],
+        "max_cells": 2000000,
+        "max_bytes": 52428800
+      },
+      "original_parsed_input_sha256": "501f23ba65f6e83efc8fc5a4019a13097d897727118051d4dd88f68de77e5682"
+    },
+    "diagnostics": [
+      {
+        "table": "group_diagnostics",
+        "question": "Which physical groups have the largest errors?",
+        "interpretation": "One summary per method and physical group; group means and within-group RMSE are different quantities. No rows are excluded.",
+        "rows": 18
+      },
+      {
+        "table": "reference_range_diagnostics",
+        "question": "Does error vary across the measured response range?",
+        "interpretation": "Up to four shared reference-quantile bins, determined after prediction for diagnosis only. Bin counts and group counts are retained; no uncertainty is inferred.",
+        "rows": 8
+      },
+      {
+        "table": "influence_diagnostics",
+        "question": "Are fitted coefficients sensitive to a particular observed run?",
+        "interpretation": "Internal studentization and Cook's distance require estimable residual variance and the independence declaration. 4/n is a review heuristic, never an automatic removal rule.",
+        "rows": 18
+      },
+      {
+        "table": "candidate_tradeoff",
+        "question": "Which supported candidates offer a tradeoff between the two response objectives?",
+        "interpretation": "Exact nondominance on the finite common candidate grid, using the declared objective directions. Fitted predictions, not measured confirmation or a continuous optimum.",
+        "rows": 441
+      }
+    ],
+    "capabilities": [
+      {
+        "capability": "input_quality",
+        "available": true,
+        "level": "descriptive",
+        "reason": "Parsed rows and selected field availability are retained."
+      },
+      {
+        "capability": "paired_descriptions",
+        "available": true,
+        "level": "descriptive",
+        "reason": "Available finite reference/comparison pairs; no missing reference is invented."
+      },
+      {
+        "capability": "fitted_model",
+        "available": true,
+        "level": "fitting",
+        "reason": "Rank-supported coefficients are available."
+      },
+      {
+        "capability": "held_out_evaluation",
+        "available": false,
+        "level": "evaluation",
+        "reason": "No held-out model evaluation is supported by this run."
+      },
+      {
+        "capability": "conditional_uncertainty",
+        "available": true,
+        "level": "inference",
+        "reason": "Only the stated estimand and confirmed independence/variance assumptions support these intervals."
+      }
+    ],
+    "evidence_summary": "Results with conditional uncertainty; review assumptions",
+    "import_options": {},
+    "export_config": {
+      "factors": [
+        "time_h",
+        "temperature_C"
+      ],
+      "responses": [
+        "moisture_percent",
+        "colour_deltaE"
+      ],
+      "id_col": "sample_id",
+      "model": "additive_quadratic",
+      "directions": {
+        "moisture_percent": "minimise",
+        "colour_deltaE": "minimise"
+      },
+      "grid_points": 21,
+      "independent_runs": true,
+      "reported_equations": null,
+      "response_mode": "matched",
+      "max_design_cells": 2000000,
+      "max_grid_candidates": 100000,
+      "column_metadata": {
+        "moisture_percent": {
+          "label": "Moisture content",
+          "unit": "%"
+        },
+        "colour_deltaE": {
+          "label": "Colour change",
+          "unit": "Delta E"
+        },
+        "time_h": {
+          "label": "Drying time",
+          "unit": "h"
+        },
+        "temperature_C": {
+          "label": "Drying temperature",
+          "unit": "deg C"
+        }
+      },
+      "input_name": "banana_design.csv",
+      "provenance": {
+        "kind": "bundled_example",
+        "example": "banana_design.csv"
+      },
+      "import_options": {}
+    }
+  },
+  "notes": [
+    "All responses use the same complete observed runs and the same candidate conditions. Missing responses and missing factor settings are never imputed.",
+    "Coefficient inference assumes independent errors with constant variance and a suitable response-surface form. Repeated factor settings are treated as independent experimental replicates only if that is how they were collected.",
+    "Candidate maxima/minima are predictions on a finite grid inside the observed convex hull. They are not measured confirmations or guaranteed continuous optima.",
+    "No repeated setting is present, so pure error and lack-of-fit tests are unavailable.",
+    "Pointwise prediction intervals are conditional on the fitted polynomial and normal-error assumptions; intervals at selected optima do not account for the search or model selection."
+  ],
+  "environment": {
+    "python": "3.14.7",
+    "platform": "Windows",
+    "architecture": "AMD64",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "streamlit": "1.63.0"
+  },
+  "created_utc": "2026-09-08T14:24:30.704500+00:00",
+  "export_profile": {
+    "figure_formats": [
+      "png",
+      "pdf",
+      "svg"
+    ],
+    "png_dpi": 300
+  },
+  "tables": {
+    "input_audit": 5,
+    "excluded_runs": 0,
+    "observed_factor_values": 18,
+    "factor_coding": 2,
+    "design_check": 1,
+    "model_support": 4,
+    "candidate_column_labels": 4,
+    "coefficients": 10,
+    "model_summary": 2,
+    "anova": 6,
+    "equation_comparison": 0,
+    "predictions": 18,
+    "candidates": 441,
+    "selected_candidates": 2,
+    "group_diagnostics": 18,
+    "reference_range_diagnostics": 8,
+    "influence_diagnostics": 18,
+    "candidate_tradeoff": 441,
+    "capabilities": 5
+  },
+  "application": "matcheddoe",
+  "software_version": "0.5.2",
+  "configuration_schema_version": "1.2",
+  "computation_status": "completed",
+  "export_status": "completed",
+  "evidence_status": "Results with conditional uncertainty; review assumptions"
+}

@@ -1,0 +1,6 @@
+﻿column,missing_cells,observed_cells,unique_observed
+sample_id,0,9,9
+time_h,0,9,3
+temperature_C,0,9,3
+moisture_percent,0,9,9
+colour_deltaE,0,9,9

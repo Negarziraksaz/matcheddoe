@@ -1,0 +1,2 @@
+﻿response,direction,factor::dose_g_L,factor::concentration_ppm,factor::pH,predicted_response,prediction_interval95_low,prediction_interval95_high,inside_observed_convex_hull,measured_confirmation
+response,maximise,1.5,7.0,10.0,71.30366666666669,64.93908377107046,77.66824956226291,True,False

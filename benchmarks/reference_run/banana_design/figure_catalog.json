@@ -1,0 +1,37 @@
+[
+  {
+    "stem": "figure",
+    "title": "Analysis overview",
+    "caption": "Figure 1. In-sample fit and residuals for moisture_percent; these panels do not show independent prediction validation. All responses are retained in the result tables."
+  },
+  {
+    "stem": "figure_response_2",
+    "title": "Fitted response: colour_deltaE",
+    "caption": "Figure 1. In-sample fit and residuals for colour_deltaE; these panels do not show independent prediction validation. All responses are retained in the result tables."
+  },
+  {
+    "stem": "diagnostic_coefficients",
+    "title": "Coded coefficient estimates",
+    "caption": "Dots show coefficients for non-intercept terms. Lines are the existing pointwise 95% coefficient intervals where estimable and independence was declared. An absent interval is not zero uncertainty. Full coefficients, including intercept, are retained in coefficients.csv."
+  },
+  {
+    "stem": "diagnostic_surface_1",
+    "title": "Supported response surface - moisture_percent",
+    "caption": "Fitted values on the common supported grid. Open circles mark 9 observed settings in this plane. Blank cells are outside the observed design hull. The pixel boundaries show grid cells; predictions are defined at the grid centres. No independent confirmation or continuous optimum is implied."
+  },
+  {
+    "stem": "diagnostic_surface_2",
+    "title": "Supported response surface - colour_deltaE",
+    "caption": "Fitted values on the common supported grid. Open circles mark 9 observed settings in this plane. Blank cells are outside the observed design hull. The pixel boundaries show grid cells; predictions are defined at the grid centres. No independent confirmation or continuous optimum is implied."
+  },
+  {
+    "stem": "diagnostic_influence",
+    "title": "Observed-run influence",
+    "caption": "Cook's distance measures fitted-model sensitivity under its assumptions. The 4/n line is a screening heuristic only; no observation is automatically removed. Internal studentization and leverage are exported in influence_diagnostics.csv."
+  },
+  {
+    "stem": "diagnostic_tradeoff",
+    "title": "Two-response tradeoff",
+    "caption": "141 of 441 supported grid candidates are nondominated for the declared directions. The open circles identify predicted tradeoffs, not a joint optimum or independent confirmation. All candidate conditions remain in candidate_tradeoff.csv."
+  }
+]

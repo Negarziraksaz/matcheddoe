@@ -1,0 +1,1700 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MatchedDoE — response surfaces at matched conditions</title><style>
+body{font-family:"Times New Roman",serif;font-size:10pt;line-height:1.5;max-width:1100px;margin:30px auto;padding:0 24px;color:#111}
+h1,h2{font-size:12pt;font-weight:bold} table{border-collapse:collapse;margin:16px auto;width:100%;table-layout:fixed;font-size:10pt}
+th,td{padding:4px 7px;text-align:center;border:0;overflow-wrap:anywhere}thead{border-top:1px solid black;border-bottom:1px solid black}tbody{border-bottom:1px solid black}
+nav{padding:12px 0;border-bottom:1px solid #bbb;line-height:1.8}a{color:#17466b}.diagnostic{break-inside:avoid}img{max-width:100%;max-height:230mm;object-fit:contain}pre{white-space:pre-wrap;overflow-wrap:anywhere}section{margin-top:28px}@page{size:A4;margin:16mm 15mm}@media print{nav{display:none}body{margin:0}img{max-height:230mm}thead{display:table-header-group}tr{break-inside:avoid}}
+</style><h1>MatchedDoE — response surfaces at matched conditions</h1><nav><a href="#summary">Summary</a> · <a href="#figure">Analysis overview</a> · <a href="#diagnostic_coefficients">Coded coefficient estimates</a> · <a href="#diagnostic_surface_1">Supported response surface - response</a> · <a href="#diagnostic_influence">Observed-run influence</a><br><a href="#tables">Complete evidence tables</a></nav><h2 id="summary">Result summary</h2><p>Input: levo_design.csv; 15 rows. Computation completed; evidence availability: complete.</p><p>Levofloxacin removal (%): 15 matched runs; fitted R² = 0.9708; residual sum of squares = 38.8985. These are in-sample fits, not independent confirmation experiments.</p>
+<section class="diagnostic" id="figure"><h2>Figure 1. Analysis overview</h2><img src="figure.png" alt="Analysis overview"><p>Figure 1. In-sample fit and residuals for response; these panels do not show independent prediction validation. All responses are retained in the result tables.</p></section><section class="diagnostic" id="diagnostic_coefficients"><h2>Figure 2. Coded coefficient estimates</h2><img src="diagnostic_coefficients.png" alt="Coded coefficient estimates"><p>Dots show coefficients for non-intercept terms. Lines are the existing pointwise 95% coefficient intervals where estimable and independence was declared. An absent interval is not zero uncertainty. Full coefficients, including intercept, are retained in coefficients.csv.</p></section><section class="diagnostic" id="diagnostic_surface_1"><h2>Figure 3. Supported response surface - response</h2><img src="diagnostic_surface_1.png" alt="Supported response surface - response"><p>Fitted values on the common supported grid; pH fixed at 7. Open circles mark 7 observed settings in this plane. Blank cells are outside the observed design hull. The pixel boundaries show grid cells; predictions are defined at the grid centres. No independent confirmation or continuous optimum is implied.</p></section><section class="diagnostic" id="diagnostic_influence"><h2>Figure 4. Observed-run influence</h2><img src="diagnostic_influence.png" alt="Observed-run influence"><p>Cook&#x27;s distance measures fitted-model sensitivity under its assumptions. The 4/n line is a screening heuristic only; no observation is automatically removed. Internal studentization and leverage are exported in influence_diagnostics.csv.</p></section><h2>Interpretation and limits</h2><ul><li>All responses use the same complete observed runs and the same candidate conditions. Missing responses and missing factor settings are never imputed.</li><li>Coefficient inference assumes independent errors with constant variance and a suitable response-surface form. Repeated factor settings are treated as independent experimental replicates only if that is how they were collected.</li><li>Candidate maxima/minima are predictions on a finite grid inside the observed convex hull. They are not measured confirmations or guaranteed continuous optima.</li><li>Pointwise prediction intervals are conditional on the fitted polynomial and normal-error assumptions; intervals at selected optima do not account for the search or model selection.</li></ul>
+<div id="tables"><section><h2>Table 1. model summary</h2><p></p><p> Part 1/3.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>n</th>
+      <th>r2_fitted</th>
+      <th>adjusted_r2</th>
+      <th>residual_ss</th>
+      <th>residual_df</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>15</td>
+      <td>0.970819</td>
+      <td>0.948933</td>
+      <td>38.8985</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/3.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>pure_error_ss</th>
+      <th>pure_error_df</th>
+      <th>lack_of_fit_ss</th>
+      <th>lack_of_fit_df</th>
+      <th>lack_of_fit_f</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>21.1813</td>
+      <td>2</td>
+      <td>17.7173</td>
+      <td>6</td>
+      <td>0.27882</td>
+    </tr>
+  </tbody>
+</table><p> Part 3/3.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>lack_of_fit_p</th>
+      <th>leave_one_run_out_press</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>0.905509</td>
+      <td>118.44</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 2. anova</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>source</th>
+      <th>ss</th>
+      <th>df</th>
+      <th>ms</th>
+      <th>f</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>model</td>
+      <td>1294.11</td>
+      <td>6</td>
+      <td>215.685</td>
+      <td>44.3585</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>residual</td>
+      <td>38.8985</td>
+      <td>8</td>
+      <td>4.86232</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>total_corrected</td>
+      <td>1333.01</td>
+      <td>14</td>
+      <td>95.215</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>p</th>
+      <th>ss_convention</th>
+      <th>inference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>1.03749e-05</td>
+      <td>overall regression with intercept; no term-level SS</td>
+      <td>available under independent-run assumptions</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>NaN</td>
+      <td>overall regression with intercept; no term-level SS</td>
+      <td>available under independent-run assumptions</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>NaN</td>
+      <td>overall regression with intercept; no term-level SS</td>
+      <td>available under independent-run assumptions</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 3. equation comparison</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></section><section><h2>Table 4. selected candidates</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>direction</th>
+      <th>factor::dose_g_L</th>
+      <th>factor::concentration_ppm</th>
+      <th>factor::pH</th>
+      <th>predicted_response</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>maximise</td>
+      <td>1.5</td>
+      <td>7</td>
+      <td>10</td>
+      <td>71.3037</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>prediction_interval95_low</th>
+      <th>prediction_interval95_high</th>
+      <th>inside_observed_convex_hull</th>
+      <th>measured_confirmation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>64.9391</td>
+      <td>77.6682</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table></section><h2>Audit appendix</h2><p>Complete tables are supplied as CSV; previews below retain the stated row and column limits.</p><section><h2>Table 5. input audit</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>column</th>
+      <th>missing_cells</th>
+      <th>observed_cells</th>
+      <th>unique_observed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sample_id</td>
+      <td>0</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>dose_g_L</td>
+      <td>0</td>
+      <td>15</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>concentration_ppm</td>
+      <td>0</td>
+      <td>15</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>pH</td>
+      <td>0</td>
+      <td>15</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>0</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 6. excluded runs</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>reason</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></section><section><h2>Table 7. observed factor values</h2><p> Showing 24 of 45 rows; the complete table is in observed_factor_values.csv.</p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>factor</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>dose_g_L</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>concentration_ppm</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>pH</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>dose_g_L</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>concentration_ppm</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>pH</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>dose_g_L</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>concentration_ppm</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>pH</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>dose_g_L</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>concentration_ppm</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>pH</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>dose_g_L</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>concentration_ppm</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>pH</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>dose_g_L</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>concentration_ppm</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>pH</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>dose_g_L</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>concentration_ppm</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>pH</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>dose_g_L</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>concentration_ppm</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>pH</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 8. factor coding</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>factor</th>
+      <th>low</th>
+      <th>centre</th>
+      <th>high</th>
+      <th>half_range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dose_g_L</td>
+      <td>0.5</td>
+      <td>1</td>
+      <td>1.5</td>
+      <td>0.5</td>
+    </tr>
+    <tr>
+      <td>concentration_ppm</td>
+      <td>4</td>
+      <td>7</td>
+      <td>10</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>pH</td>
+      <td>4</td>
+      <td>7</td>
+      <td>10</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 9. design check</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>complete_runs</th>
+      <th>unique_settings</th>
+      <th>coefficients</th>
+      <th>rank</th>
+      <th>residual_df</th>
+      <th>condition_number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>15</td>
+      <td>13</td>
+      <td>7</td>
+      <td>7</td>
+      <td>8</td>
+      <td>1.93649</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 10. model support</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>terms</th>
+      <th>rank</th>
+      <th>estimable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>linear</td>
+      <td>4</td>
+      <td>4</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2fi</td>
+      <td>7</td>
+      <td>7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>additive_quadratic</td>
+      <td>7</td>
+      <td>7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>quadratic</td>
+      <td>10</td>
+      <td>10</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 11. candidate column labels</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>role</th>
+      <th>original_label</th>
+      <th>export_column</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>factors</td>
+      <td>dose_g_L</td>
+      <td>factor::dose_g_L</td>
+    </tr>
+    <tr>
+      <td>factors</td>
+      <td>concentration_ppm</td>
+      <td>factor::concentration_ppm</td>
+    </tr>
+    <tr>
+      <td>factors</td>
+      <td>pH</td>
+      <td>factor::pH</td>
+    </tr>
+    <tr>
+      <td>predictions</td>
+      <td>response</td>
+      <td>prediction::response</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 12. coefficients</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>term</th>
+      <th>coefficient_coded</th>
+      <th>standard_error</th>
+      <th>ci95_low</th>
+      <th>ci95_high</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>Intercept</td>
+      <td>53.3487</td>
+      <td>0.569346</td>
+      <td>52.0358</td>
+      <td>54.6616</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>dose_g_L</td>
+      <td>7.025</td>
+      <td>0.779609</td>
+      <td>5.22722</td>
+      <td>8.82278</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>concentration_ppm</td>
+      <td>-7.5375</td>
+      <td>0.779609</td>
+      <td>-9.33528</td>
+      <td>-5.73972</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>pH</td>
+      <td>3.87</td>
+      <td>0.779609</td>
+      <td>2.07222</td>
+      <td>5.66778</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>dose_g_L:concentration_ppm</td>
+      <td>5.225</td>
+      <td>1.10253</td>
+      <td>2.68255</td>
+      <td>7.76745</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>dose_g_L:pH</td>
+      <td>7.06</td>
+      <td>1.10253</td>
+      <td>4.51755</td>
+      <td>9.60245</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>concentration_ppm:pH</td>
+      <td>2.025</td>
+      <td>1.10253</td>
+      <td>-0.517445</td>
+      <td>4.56745</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 13. predictions</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>response</th>
+      <th>reference</th>
+      <th>prediction</th>
+      <th>residual</th>
+      <th>leverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>response</td>
+      <td>60.41</td>
+      <td>59.0862</td>
+      <td>-1.32383</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>response</td>
+      <td>61.31</td>
+      <td>62.6862</td>
+      <td>1.37617</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>response</td>
+      <td>34.3</td>
+      <td>33.5612</td>
+      <td>-0.738833</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>response</td>
+      <td>56.1</td>
+      <td>58.0612</td>
+      <td>1.96117</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>response</td>
+      <td>47.69</td>
+      <td>49.5137</td>
+      <td>1.82367</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>response</td>
+      <td>50.32</td>
+      <td>49.4437</td>
+      <td>-0.876333</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>response</td>
+      <td>42.26</td>
+      <td>43.1337</td>
+      <td>0.873667</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>response</td>
+      <td>73.13</td>
+      <td>71.3037</td>
+      <td>-1.82633</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>response</td>
+      <td>59.44</td>
+      <td>59.0412</td>
+      <td>-0.398833</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>response</td>
+      <td>40.9</td>
+      <td>39.9162</td>
+      <td>-0.983833</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>response</td>
+      <td>62.18</td>
+      <td>62.7312</td>
+      <td>0.551167</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>response</td>
+      <td>51.74</td>
+      <td>51.7062</td>
+      <td>-0.0338333</td>
+      <td>0.566667</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>response</td>
+      <td>49.74</td>
+      <td>53.3487</td>
+      <td>3.60867</td>
+      <td>0.0666667</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>response</td>
+      <td>55.64</td>
+      <td>53.3487</td>
+      <td>-2.29133</td>
+      <td>0.0666667</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>response</td>
+      <td>55.07</td>
+      <td>53.3487</td>
+      <td>-1.72133</td>
+      <td>0.0666667</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>prediction_kind</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 14. candidates</h2><p> Showing 12 of 7501 rows; the complete table is in candidates.csv.</p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>factor::dose_g_L</th>
+      <th>factor::concentration_ppm</th>
+      <th>factor::pH</th>
+      <th>prediction::response</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.5</td>
+      <td>4</td>
+      <td>7</td>
+      <td>59.0862</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.3</td>
+      <td>6.7</td>
+      <td>58.3112</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.3</td>
+      <td>7</td>
+      <td>57.8099</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.3</td>
+      <td>7.3</td>
+      <td>57.3087</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.6</td>
+      <td>6.4</td>
+      <td>57.4957</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.6</td>
+      <td>6.7</td>
+      <td>57.0147</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.6</td>
+      <td>7</td>
+      <td>56.5337</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.6</td>
+      <td>7.3</td>
+      <td>56.0527</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.6</td>
+      <td>7.6</td>
+      <td>55.5717</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.9</td>
+      <td>6.1</td>
+      <td>56.6397</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.9</td>
+      <td>6.4</td>
+      <td>56.1789</td>
+    </tr>
+    <tr>
+      <td>0.5</td>
+      <td>4.9</td>
+      <td>6.7</td>
+      <td>55.7182</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 15. group diagnostics</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>group</th>
+      <th>n</th>
+      <th>reference_mean</th>
+      <th>prediction_mean</th>
+      <th>rmse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>1</td>
+      <td>1</td>
+      <td>60.41</td>
+      <td>59.0862</td>
+      <td>1.32383</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>10</td>
+      <td>1</td>
+      <td>40.9</td>
+      <td>39.9162</td>
+      <td>0.983833</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>11</td>
+      <td>1</td>
+      <td>62.18</td>
+      <td>62.7312</td>
+      <td>0.551167</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>12</td>
+      <td>1</td>
+      <td>51.74</td>
+      <td>51.7062</td>
+      <td>0.0338333</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>13</td>
+      <td>1</td>
+      <td>49.74</td>
+      <td>53.3487</td>
+      <td>3.60867</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>14</td>
+      <td>1</td>
+      <td>55.64</td>
+      <td>53.3487</td>
+      <td>2.29133</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>15</td>
+      <td>1</td>
+      <td>55.07</td>
+      <td>53.3487</td>
+      <td>1.72133</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>2</td>
+      <td>1</td>
+      <td>61.31</td>
+      <td>62.6862</td>
+      <td>1.37617</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>3</td>
+      <td>1</td>
+      <td>34.3</td>
+      <td>33.5612</td>
+      <td>0.738833</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>4</td>
+      <td>1</td>
+      <td>56.1</td>
+      <td>58.0612</td>
+      <td>1.96117</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>5</td>
+      <td>1</td>
+      <td>47.69</td>
+      <td>49.5137</td>
+      <td>1.82367</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>6</td>
+      <td>1</td>
+      <td>50.32</td>
+      <td>49.4437</td>
+      <td>0.876333</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>7</td>
+      <td>1</td>
+      <td>42.26</td>
+      <td>43.1337</td>
+      <td>0.873667</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>8</td>
+      <td>1</td>
+      <td>73.13</td>
+      <td>71.3037</td>
+      <td>1.82633</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>9</td>
+      <td>1</td>
+      <td>59.44</td>
+      <td>59.0412</td>
+      <td>0.398833</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>mae</th>
+      <th>bias</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>1.32383</td>
+      <td>-1.32383</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>0.983833</td>
+      <td>-0.983833</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>0.551167</td>
+      <td>0.551167</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>0.0338333</td>
+      <td>-0.0338333</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>3.60867</td>
+      <td>3.60867</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>2.29133</td>
+      <td>-2.29133</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>1.72133</td>
+      <td>-1.72133</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>1.37617</td>
+      <td>1.37617</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>0.738833</td>
+      <td>-0.738833</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>1.96117</td>
+      <td>1.96117</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>1.82367</td>
+      <td>1.82367</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>0.876333</td>
+      <td>-0.876333</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>0.873667</td>
+      <td>0.873667</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>1.82633</td>
+      <td>-1.82633</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>0.398833</td>
+      <td>-0.398833</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 16. reference range diagnostics</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>reference_bin</th>
+      <th>lower_reference</th>
+      <th>upper_reference</th>
+      <th>reference_mean</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>0</td>
+      <td>34.3</td>
+      <td>48.715</td>
+      <td>41.2875</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>1</td>
+      <td>48.715</td>
+      <td>55.07</td>
+      <td>51.7175</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>2</td>
+      <td>55.07</td>
+      <td>59.925</td>
+      <td>57.06</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>3</td>
+      <td>59.925</td>
+      <td>73.13</td>
+      <td>64.2575</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>n_groups</th>
+      <th>rmse</th>
+      <th>group_rmse</th>
+      <th>bias</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>response</td>
+      <td>4</td>
+      <td>1.18352</td>
+      <td>1.18352</td>
+      <td>0.243667</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>4</td>
+      <td>2.04662</td>
+      <td>2.04662</td>
+      <td>0.244292</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>3</td>
+      <td>1.75646</td>
+      <td>1.75646</td>
+      <td>-0.243</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>4</td>
+      <td>1.3496</td>
+      <td>1.3496</td>
+      <td>-0.305708</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 17. influence diagnostics</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>response</th>
+      <th>leverage</th>
+      <th>internal_studentized_residual</th>
+      <th>cooks_distance</th>
+      <th>reference_cooks_threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>-0.912012</td>
+      <td>0.155385</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>0.948066</td>
+      <td>0.167913</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>-0.508995</td>
+      <td>0.0483989</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>1.35108</td>
+      <td>0.341013</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>1.25636</td>
+      <td>0.294872</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>-0.603722</td>
+      <td>0.0680896</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>0.601884</td>
+      <td>0.0676759</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>-1.25819</td>
+      <td>0.295735</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>-0.274763</td>
+      <td>0.0141034</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>-0.67778</td>
+      <td>0.0858194</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>0.379709</td>
+      <td>0.0269345</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>response</td>
+      <td>0.566667</td>
+      <td>-0.0233084</td>
+      <td>0.000101492</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>response</td>
+      <td>0.0666667</td>
+      <td>1.69397</td>
+      <td>0.0292811</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>response</td>
+      <td>0.0666667</td>
+      <td>-1.07559</td>
+      <td>0.0118051</td>
+      <td>0.266667</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>response</td>
+      <td>0.0666667</td>
+      <td>-0.808025</td>
+      <td>0.0066623</td>
+      <td>0.266667</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>exceeds_reference_threshold</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>True</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>True</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>True</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 18. capabilities</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>capability</th>
+      <th>available</th>
+      <th>level</th>
+      <th>reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>input_quality</td>
+      <td>True</td>
+      <td>descriptive</td>
+      <td>Parsed rows and selected field availability are retained.</td>
+    </tr>
+    <tr>
+      <td>paired_descriptions</td>
+      <td>True</td>
+      <td>descriptive</td>
+      <td>Available finite reference/comparison pairs; no missing reference is invented.</td>
+    </tr>
+    <tr>
+      <td>fitted_model</td>
+      <td>True</td>
+      <td>fitting</td>
+      <td>Rank-supported coefficients are available.</td>
+    </tr>
+    <tr>
+      <td>held_out_evaluation</td>
+      <td>False</td>
+      <td>evaluation</td>
+      <td>No held-out model evaluation is supported by this run.</td>
+    </tr>
+    <tr>
+      <td>conditional_uncertainty</td>
+      <td>True</td>
+      <td>inference</td>
+      <td>Only the stated estimand and confirmed independence/variance assumptions support these intervals.</td>
+    </tr>
+  </tbody>
+</table></section></div><h2>Analysis settings</h2><pre>{
+  &quot;input_sha256&quot;: &quot;12f0b29df96c30c96910a8cb38a7103cb7933898b25de17b8d481bdc8e0cd4e1&quot;,
+  &quot;factors&quot;: [
+    &quot;dose_g_L&quot;,
+    &quot;concentration_ppm&quot;,
+    &quot;pH&quot;
+  ],
+  &quot;candidate_columns&quot;: {
+    &quot;factors&quot;: {
+      &quot;dose_g_L&quot;: &quot;factor::dose_g_L&quot;,
+      &quot;concentration_ppm&quot;: &quot;factor::concentration_ppm&quot;,
+      &quot;pH&quot;: &quot;factor::pH&quot;
+    },
+    &quot;predictions&quot;: {
+      &quot;response&quot;: &quot;prediction::response&quot;
+    }
+  },
+  &quot;responses&quot;: [
+    &quot;response&quot;
+  ],
+  &quot;model&quot;: &quot;2fi&quot;,
+  &quot;response_mode&quot;: &quot;matched&quot;,
+  &quot;grid_points_per_factor&quot;: 21,
+  &quot;independent_runs_confirmed&quot;: true,
+  &quot;candidate_status&quot;: &quot;supported finite grid&quot;,
+  &quot;software_source_sha256&quot;: &quot;5c0dc36342d076126ecf4ab93b52c252873a213223e17ec732d253218d62a267&quot;,
+  &quot;source_hash_definition&quot;: &quot;SHA256 of sorted relative Python paths and file bytes, each terminated by a NUL byte&quot;,
+  &quot;application&quot;: &quot;matcheddoe&quot;,
+  &quot;software_version&quot;: &quot;0.5.2&quot;,
+  &quot;configuration_schema_version&quot;: &quot;1.2&quot;,
+  &quot;call_parameters&quot;: {
+    &quot;factors&quot;: [
+      &quot;dose_g_L&quot;,
+      &quot;concentration_ppm&quot;,
+      &quot;pH&quot;
+    ],
+    &quot;responses&quot;: [
+      &quot;response&quot;
+    ],
+    &quot;id_col&quot;: &quot;sample_id&quot;,
+    &quot;model&quot;: &quot;2fi&quot;,
+    &quot;directions&quot;: {
+      &quot;response&quot;: &quot;maximise&quot;
+    },
+    &quot;grid_points&quot;: 21,
+    &quot;independent_runs&quot;: true,
+    &quot;reported_equations&quot;: null,
+    &quot;response_mode&quot;: &quot;matched&quot;,
+    &quot;max_design_cells&quot;: 2000000,
+    &quot;max_grid_candidates&quot;: 100000,
+    &quot;column_metadata&quot;: {
+      &quot;response&quot;: {
+        &quot;label&quot;: &quot;Levofloxacin removal&quot;,
+        &quot;unit&quot;: &quot;%&quot;
+      },
+      &quot;dose_g_L&quot;: {
+        &quot;label&quot;: &quot;Adsorbent dose&quot;,
+        &quot;unit&quot;: &quot;g/L&quot;
+      },
+      &quot;concentration_ppm&quot;: {
+        &quot;label&quot;: &quot;Initial concentration&quot;,
+        &quot;unit&quot;: &quot;ppm&quot;
+      },
+      &quot;pH&quot;: {
+        &quot;label&quot;: &quot;pH&quot;,
+        &quot;unit&quot;: &quot;dimensionless&quot;
+      }
+    },
+    &quot;input_name&quot;: &quot;levo_design.csv&quot;,
+    &quot;provenance&quot;: {
+      &quot;kind&quot;: &quot;bundled_example&quot;,
+      &quot;example&quot;: &quot;levo_design.csv&quot;
+    }
+  },
+  &quot;input_name&quot;: &quot;levo_design.csv&quot;,
+  &quot;columns&quot;: {
+    &quot;sample_id&quot;: {
+      &quot;label&quot;: &quot;sample_id&quot;,
+      &quot;unit&quot;: &quot;not provided&quot;
+    },
+    &quot;dose_g_L&quot;: {
+      &quot;label&quot;: &quot;Adsorbent dose&quot;,
+      &quot;unit&quot;: &quot;g/L&quot;
+    },
+    &quot;concentration_ppm&quot;: {
+      &quot;label&quot;: &quot;Initial concentration&quot;,
+      &quot;unit&quot;: &quot;ppm&quot;
+    },
+    &quot;pH&quot;: {
+      &quot;label&quot;: &quot;pH&quot;,
+      &quot;unit&quot;: &quot;dimensionless&quot;
+    },
+    &quot;response&quot;: {
+      &quot;label&quot;: &quot;Levofloxacin removal&quot;,
+      &quot;unit&quot;: &quot;%&quot;
+    }
+  },
+  &quot;provenance&quot;: {
+    &quot;kind&quot;: &quot;bundled_example&quot;,
+    &quot;example&quot;: &quot;levo_design.csv&quot;,
+    &quot;original_source&quot;: {
+      &quot;id&quot;: &quot;D03&quot;,
+      &quot;repository_id&quot;: &quot;v28r4bz6s5&quot;,
+      &quot;version&quot;: 1,
+      &quot;title&quot;: &quot;Dataset on photocatalytic degradation of LEVO using HAp photocatalyst Optimization by RSM&quot;,
+      &quot;creators&quot;: [
+        &quot;Adrian Go&quot;,
+        &quot;Francis dela Rosa&quot;,
+        &quot;Drexel Camacho&quot;,
+        &quot;Eric Punzalan&quot;
+      ],
+      &quot;doi&quot;: &quot;10.17632/v28r4bz6s5.1&quot;,
+      &quot;source_url&quot;: &quot;https://data.mendeley.com/datasets/v28r4bz6s5/1&quot;,
+      &quot;license&quot;: &quot;CC-BY-4.0&quot;,
+      &quot;license_url&quot;: &quot;https://creativecommons.org/licenses/by/4.0/&quot;,
+      &quot;checked_on&quot;: &quot;2026-09-07&quot;,
+      &quot;raw_data_included_in_delivery&quot;: false,
+      &quot;downloads&quot;: [
+        {
+          &quot;file&quot;: &quot;LEVO_RSM.xlsx&quot;,
+          &quot;url&quot;: &quot;https://data.mendeley.com/public-files/datasets/v28r4bz6s5/files/6a351c2a-3cf8-4b5c-88cf-578e30c8944a/file_downloaded&quot;,
+          &quot;bytes&quot;: 314914,
+          &quot;sha256&quot;: &quot;9d04295ae8e7d66f4feaf3eef83135e02b1e84e1156a74fd148fff686e52d5ba&quot;
+        }
+      ],
+      &quot;processed_examples_included&quot;: true,
+      &quot;equivalent_cited_deposit&quot;: {
+        &quot;doi&quot;: &quot;10.17632/h82gspgkpf.2&quot;,
+        &quot;source_url&quot;: &quot;https://data.mendeley.com/datasets/h82gspgkpf/2&quot;,
+        &quot;relationship&quot;: &quot;P30 cites this deposit. Its public file metadata gives the same SHA256 and 314914-byte workbook as the bundled source deposit.&quot;,
+        &quot;metadata_checked_on&quot;: &quot;2026-09-07&quot;
+      }
+    },
+    &quot;transformations&quot;: &quot;15 measured BBD Model sheet runs; dose, concentration and pH copied in actual units. Inconsistent printed interaction labels and confirmation claims excluded. Only two pure-error degrees of freedom.&quot;,
+    &quot;column_metadata&quot;: {
+      &quot;response&quot;: {
+        &quot;label&quot;: &quot;Levofloxacin removal&quot;,
+        &quot;unit&quot;: &quot;%&quot;
+      },
+      &quot;dose_g_L&quot;: {
+        &quot;label&quot;: &quot;Adsorbent dose&quot;,
+        &quot;unit&quot;: &quot;g/L&quot;
+      },
+      &quot;concentration_ppm&quot;: {
+        &quot;label&quot;: &quot;Initial concentration&quot;,
+        &quot;unit&quot;: &quot;ppm&quot;
+      },
+      &quot;pH&quot;: {
+        &quot;label&quot;: &quot;pH&quot;,
+        &quot;unit&quot;: &quot;dimensionless&quot;
+      }
+    },
+    &quot;prepared_csv_sha256&quot;: &quot;4cc7623266600a3638934534ec4a45dead7985c40a35256b10f4ad7e021949b2&quot;,
+    &quot;code_license&quot;: &quot;MIT&quot;,
+    &quot;data_license&quot;: &quot;CC-BY-4.0&quot;
+  },
+  &quot;input_hash_definition&quot;: &quot;SHA256 of parsed table serialized as canonical CSV; not original file bytes&quot;,
+  &quot;n_input_rows&quot;: 15,
+  &quot;computation_status&quot;: &quot;completed&quot;,
+  &quot;evidence_status&quot;: &quot;complete&quot;,
+  &quot;deterministic_protocol&quot;: {
+    &quot;evaluation&quot;: &quot;in-sample fitted design&quot;,
+    &quot;candidate_grid_points_per_factor&quot;: 21
+  },
+  &quot;input_preparation&quot;: {
+    &quot;generated_row_id&quot;: null,
+    &quot;row_id_meaning&quot;: &quot;Source observation ID&quot;,
+    &quot;import&quot;: {
+      &quot;worksheet&quot;: null,
+      &quot;header_row&quot;: 1,
+      &quot;separator&quot;: &quot;,&quot;,
+      &quot;encoding&quot;: &quot;utf-8-sig&quot;,
+      &quot;notices&quot;: [],
+      &quot;decimal&quot;: &quot;.&quot;,
+      &quot;missing_tokens&quot;: [],
+      &quot;column_mapping&quot;: [
+        {
+          &quot;position&quot;: 1,
+          &quot;source_header&quot;: &quot;sample_id&quot;,
+          &quot;analysis_header&quot;: &quot;sample_id&quot;
+        },
+        {
+          &quot;position&quot;: 2,
+          &quot;source_header&quot;: &quot;dose_g_L&quot;,
+          &quot;analysis_header&quot;: &quot;dose_g_L&quot;
+        },
+        {
+          &quot;position&quot;: 3,
+          &quot;source_header&quot;: &quot;concentration_ppm&quot;,
+          &quot;analysis_header&quot;: &quot;concentration_ppm&quot;
+        },
+        {
+          &quot;position&quot;: 4,
+          &quot;source_header&quot;: &quot;pH&quot;,
+          &quot;analysis_header&quot;: &quot;pH&quot;
+        },
+        {
+          &quot;position&quot;: 5,
+          &quot;source_header&quot;: &quot;response&quot;,
+          &quot;analysis_header&quot;: &quot;response&quot;
+        }
+      ],
+      &quot;max_cells&quot;: 2000000,
+      &quot;max_bytes&quot;: 52428800
+    },
+    &quot;original_parsed_input_sha256&quot;: &quot;12f0b29df96c30c96910a8cb38a7103cb7933898b25de17b8d481bdc8e0cd4e1&quot;
+  },
+  &quot;diagnostics&quot;: [
+    {
+      &quot;table&quot;: &quot;group_diagnostics&quot;,
+      &quot;question&quot;: &quot;Which physical groups have the largest errors?&quot;,
+      &quot;interpretation&quot;: &quot;One summary per method and physical group; group means and within-group RMSE are different quantities. No rows are excluded.&quot;,
+      &quot;rows&quot;: 15
+    },
+    {
+      &quot;table&quot;: &quot;reference_range_diagnostics&quot;,
+      &quot;question&quot;: &quot;Does error vary across the measured response range?&quot;,
+      &quot;interpretation&quot;: &quot;Up to four shared reference-quantile bins, determined after prediction for diagnosis only. Bin counts and group counts are retained; no uncertainty is inferred.&quot;,
+      &quot;rows&quot;: 4
+    },
+    {
+      &quot;table&quot;: &quot;influence_diagnostics&quot;,
+      &quot;question&quot;: &quot;Are fitted coefficients sensitive to a particular observed run?&quot;,
+      &quot;interpretation&quot;: &quot;Internal studentization and Cook&#x27;s distance require estimable residual variance and the independence declaration. 4/n is a review heuristic, never an automatic removal rule.&quot;,
+      &quot;rows&quot;: 15
+    }
+  ],
+  &quot;capabilities&quot;: [
+    {
+      &quot;capability&quot;: &quot;input_quality&quot;,
+      &quot;available&quot;: true,
+      &quot;level&quot;: &quot;descriptive&quot;,
+      &quot;reason&quot;: &quot;Parsed rows and selected field availability are retained.&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;paired_descriptions&quot;,
+      &quot;available&quot;: true,
+      &quot;level&quot;: &quot;descriptive&quot;,
+      &quot;reason&quot;: &quot;Available finite reference/comparison pairs; no missing reference is invented.&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;fitted_model&quot;,
+      &quot;available&quot;: true,
+      &quot;level&quot;: &quot;fitting&quot;,
+      &quot;reason&quot;: &quot;Rank-supported coefficients are available.&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;held_out_evaluation&quot;,
+      &quot;available&quot;: false,
+      &quot;level&quot;: &quot;evaluation&quot;,
+      &quot;reason&quot;: &quot;No held-out model evaluation is supported by this run.&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;conditional_uncertainty&quot;,
+      &quot;available&quot;: true,
+      &quot;level&quot;: &quot;inference&quot;,
+      &quot;reason&quot;: &quot;Only the stated estimand and confirmed independence/variance assumptions support these intervals.&quot;
+    }
+  ],
+  &quot;evidence_summary&quot;: &quot;Results with conditional uncertainty; review assumptions&quot;,
+  &quot;import_options&quot;: {},
+  &quot;export_config&quot;: {
+    &quot;factors&quot;: [
+      &quot;dose_g_L&quot;,
+      &quot;concentration_ppm&quot;,
+      &quot;pH&quot;
+    ],
+    &quot;responses&quot;: [
+      &quot;response&quot;
+    ],
+    &quot;id_col&quot;: &quot;sample_id&quot;,
+    &quot;model&quot;: &quot;2fi&quot;,
+    &quot;directions&quot;: {
+      &quot;response&quot;: &quot;maximise&quot;
+    },
+    &quot;grid_points&quot;: 21,
+    &quot;independent_runs&quot;: true,
+    &quot;reported_equations&quot;: null,
+    &quot;response_mode&quot;: &quot;matched&quot;,
+    &quot;max_design_cells&quot;: 2000000,
+    &quot;max_grid_candidates&quot;: 100000,
+    &quot;column_metadata&quot;: {
+      &quot;response&quot;: {
+        &quot;label&quot;: &quot;Levofloxacin removal&quot;,
+        &quot;unit&quot;: &quot;%&quot;
+      },
+      &quot;dose_g_L&quot;: {
+        &quot;label&quot;: &quot;Adsorbent dose&quot;,
+        &quot;unit&quot;: &quot;g/L&quot;
+      },
+      &quot;concentration_ppm&quot;: {
+        &quot;label&quot;: &quot;Initial concentration&quot;,
+        &quot;unit&quot;: &quot;ppm&quot;
+      },
+      &quot;pH&quot;: {
+        &quot;label&quot;: &quot;pH&quot;,
+        &quot;unit&quot;: &quot;dimensionless&quot;
+      }
+    },
+    &quot;input_name&quot;: &quot;levo_design.csv&quot;,
+    &quot;provenance&quot;: {
+      &quot;kind&quot;: &quot;bundled_example&quot;,
+      &quot;example&quot;: &quot;levo_design.csv&quot;
+    },
+    &quot;import_options&quot;: {}
+  }
+}</pre></html>

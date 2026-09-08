@@ -1,0 +1,5 @@
+﻿role,original_label,export_column
+factors,dose_g_L,factor::dose_g_L
+factors,concentration_ppm,factor::concentration_ppm
+factors,pH,factor::pH
+predictions,response,prediction::response

@@ -1,0 +1,46 @@
+{
+  "factors": [
+    "time_h",
+    "temperature_C"
+  ],
+  "responses": [
+    "moisture_percent",
+    "colour_deltaE"
+  ],
+  "id_col": "sample_id",
+  "model": "additive_quadratic",
+  "directions": {
+    "moisture_percent": "minimise",
+    "colour_deltaE": "minimise"
+  },
+  "grid_points": 21,
+  "independent_runs": true,
+  "reported_equations": null,
+  "response_mode": "matched",
+  "max_design_cells": 2000000,
+  "max_grid_candidates": 100000,
+  "column_metadata": {
+    "moisture_percent": {
+      "label": "Moisture content",
+      "unit": "%"
+    },
+    "colour_deltaE": {
+      "label": "Colour change",
+      "unit": "Delta E"
+    },
+    "time_h": {
+      "label": "Drying time",
+      "unit": "h"
+    },
+    "temperature_C": {
+      "label": "Drying temperature",
+      "unit": "deg C"
+    }
+  },
+  "input_name": "banana_design.csv",
+  "provenance": {
+    "kind": "bundled_example",
+    "example": "banana_design.csv"
+  },
+  "import_options": {}
+}

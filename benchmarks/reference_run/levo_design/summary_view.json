@@ -1,0 +1,10 @@
+{
+  "method": null,
+  "domain": null,
+  "response": "response",
+  "budget": null,
+  "scope": "fitted_observations",
+  "reason": "",
+  "n_available_pairs": 15,
+  "n_primary_pairs": 15
+}

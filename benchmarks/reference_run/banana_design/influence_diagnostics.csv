@@ -1,0 +1,19 @@
+﻿sample_id,response,leverage,internal_studentized_residual,cooks_distance,reference_cooks_threshold,exceeds_reference_threshold,status
+1,colour_deltaE,0.5555555555555552,1.651418925051842,0.6817961165048444,0.4444444444444444,True,descriptive influence flag; retain observation
+2,colour_deltaE,0.5555555555555557,1.4644658391969365,0.5361650485436972,0.4444444444444444,True,descriptive influence flag; retain observation
+3,colour_deltaE,0.5555555555555557,0.623176952849734,0.09708737864076993,0.4444444444444444,False,descriptive influence flag; retain observation
+4,colour_deltaE,0.5555555555555556,-0.40506501935236483,0.04101941747573293,0.4444444444444444,False,descriptive influence flag; retain observation
+5,colour_deltaE,0.5555555555555558,-1.433306991554424,0.5135922330096989,0.4444444444444444,True,descriptive influence flag; retain observation
+6,colour_deltaE,0.5555555555555557,-0.5920181052072812,0.0876213592233049,0.4444444444444444,False,descriptive influence flag; retain observation
+7,colour_deltaE,0.5555555555555555,-0.031158847642482702,0.00024271844660186237,0.4444444444444444,False,descriptive influence flag; retain observation
+8,colour_deltaE,0.5555555555555554,-0.21811193349742872,0.011893203883496682,0.4444444444444444,False,descriptive influence flag; retain observation
+9,colour_deltaE,0.555555555555556,-1.0594008198446019,0.28058252427185415,0.4444444444444444,False,descriptive influence flag; retain observation
+1,moisture_percent,0.5555555555555552,-0.5325367830524038,0.07089885632595068,0.4444444444444444,False,descriptive influence flag; retain observation
+2,moisture_percent,0.5555555555555557,-0.6946131952857384,0.1206218727662659,0.4444444444444444,False,descriptive influence flag; retain observation
+3,moisture_percent,0.5555555555555557,0.601998102580958,0.09060042887776844,0.4444444444444444,False,descriptive influence flag; retain observation
+4,moisture_percent,0.5555555555555556,-1.2039962051619306,0.3624017155110824,0.4444444444444444,False,descriptive influence flag; retain observation
+5,moisture_percent,0.5555555555555558,-0.0694613195285884,0.0012062187276631654,0.4444444444444444,False,descriptive influence flag; retain observation
+6,moisture_percent,0.5555555555555557,-1.3660726173952773,0.46653859899929623,0.4444444444444444,True,descriptive influence flag; retain observation
+7,moisture_percent,0.5555555555555555,0.7640745148142871,0.145952466047172,0.4444444444444444,False,descriptive influence flag; retain observation
+8,moisture_percent,0.5555555555555554,0.6019981025809479,0.09060042887776529,0.4444444444444444,False,descriptive influence flag; retain observation
+9,moisture_percent,0.555555555555556,1.8986094004476404,0.9011794138670387,0.4444444444444444,True,descriptive influence flag; retain observation

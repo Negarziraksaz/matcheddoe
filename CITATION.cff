@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Cite this software and the original datasets used in your analysis."
+title: "MatchedDoE"
+type: software
+version: 0.5.2
+authors:
+  - name: "Negar Ziraksaz"
+license: MIT
+abstract: "Fit estimable response surfaces, check replication and compare responses at the same supported conditions."

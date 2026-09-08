@@ -1,0 +1,3 @@
+﻿response,n,r2_fitted,adjusted_r2,residual_ss,residual_df,pure_error_ss,pure_error_df,lack_of_fit_ss,lack_of_fit_df,lack_of_fit_f,lack_of_fit_p,leave_one_run_out_press
+moisture_percent,9,0.9526997329005646,0.9053994658011292,18.65333333333335,4,,0,,,,,94.43250000000018
+colour_deltaE,9,0.9965754563287562,0.9931509126575124,1.144444444444444,4,,0,,,,,5.793749999999999

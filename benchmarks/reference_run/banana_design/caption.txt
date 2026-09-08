@@ -1,0 +1,1 @@
+Figure 1. In-sample fit and residuals for moisture_percent; these panels do not show independent prediction validation. All responses are retained in the result tables.

@@ -1,0 +1,2 @@
+﻿response,n,r2_fitted,adjusted_r2,residual_ss,residual_df,pure_error_ss,pure_error_df,lack_of_fit_ss,lack_of_fit_df,lack_of_fit_f,lack_of_fit_p,leave_one_run_out_press
+response,15,0.970819017396657,0.9489332804441497,38.898523333333216,8,21.18126666666666,2,17.717256666666557,6,0.27881959635191106,0.90550907826004,118.44020658736822

@@ -1,0 +1,12 @@
+[
+  {
+    "stem": "primary_fit",
+    "title": "Fitted values and residuals",
+    "caption": "All 15 finite pairs displayed. Units: Levofloxacin removal (%). In-sample fitted values, not independent prediction validation."
+  },
+  {
+    "stem": "primary_effect",
+    "title": "Coded factor coefficients",
+    "caption": "First 6 non-intercept terms in declared model order. Full table is exported. Lines, where available, are pointwise 95% coefficient intervals under the stated residual-variance and independence assumptions."
+  }
+]

@@ -1,0 +1,7 @@
+﻿response,source,ss,df,ms,f,p,ss_convention,inference
+moisture_percent,model,375.7066666666668,4,93.9266666666667,20.141529664045738,0.006500294583540168,overall regression with intercept; no term-level SS,available under independent-run assumptions
+moisture_percent,residual,18.65333333333335,4,4.6633333333333375,,,overall regression with intercept; no term-level SS,available under independent-run assumptions
+moisture_percent,total_corrected,394.3600000000002,8,49.29500000000002,,,overall regression with intercept; no term-level SS,available under independent-run assumptions
+colour_deltaE,model,333.0444444444444,4,83.2611111111111,291.0097087378642,3.510217540136806e-05,overall regression with intercept; no term-level SS,available under independent-run assumptions
+colour_deltaE,residual,1.144444444444444,4,0.286111111111111,,,overall regression with intercept; no term-level SS,available under independent-run assumptions
+colour_deltaE,total_corrected,334.18888888888887,8,41.77361111111111,,,overall regression with intercept; no term-level SS,available under independent-run assumptions

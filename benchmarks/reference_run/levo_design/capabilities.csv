@@ -1,0 +1,6 @@
+﻿capability,available,level,reason
+input_quality,True,descriptive,Parsed rows and selected field availability are retained.
+paired_descriptions,True,descriptive,Available finite reference/comparison pairs; no missing reference is invented.
+fitted_model,True,fitting,Rank-supported coefficients are available.
+held_out_evaluation,False,evaluation,No held-out model evaluation is supported by this run.
+conditional_uncertainty,True,inference,Only the stated estimand and confirmed independence/variance assumptions support these intervals.

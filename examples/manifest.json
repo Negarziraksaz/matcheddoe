@@ -1,0 +1,10 @@
+{
+  "banana_design.csv": {
+    "sha256": "d92dc8b0cce05ba05c16987e7f4c94a99e83fa997944b8a8b45d2c6c29e62fbe",
+    "bytes": 234
+  },
+  "levo_design.csv": {
+    "sha256": "4cc7623266600a3638934534ec4a45dead7985c40a35256b10f4ad7e021949b2",
+    "bytes": 316
+  }
+}

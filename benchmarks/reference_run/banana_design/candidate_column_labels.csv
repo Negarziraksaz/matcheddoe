@@ -1,0 +1,5 @@
+﻿role,original_label,export_column
+factors,time_h,factor::time_h
+factors,temperature_C,factor::temperature_C
+predictions,moisture_percent,prediction::moisture_percent
+predictions,colour_deltaE,prediction::colour_deltaE

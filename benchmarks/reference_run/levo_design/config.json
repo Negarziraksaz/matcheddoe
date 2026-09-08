@@ -1,0 +1,45 @@
+{
+  "factors": [
+    "dose_g_L",
+    "concentration_ppm",
+    "pH"
+  ],
+  "responses": [
+    "response"
+  ],
+  "id_col": "sample_id",
+  "model": "2fi",
+  "directions": {
+    "response": "maximise"
+  },
+  "grid_points": 21,
+  "independent_runs": true,
+  "reported_equations": null,
+  "response_mode": "matched",
+  "max_design_cells": 2000000,
+  "max_grid_candidates": 100000,
+  "column_metadata": {
+    "response": {
+      "label": "Levofloxacin removal",
+      "unit": "%"
+    },
+    "dose_g_L": {
+      "label": "Adsorbent dose",
+      "unit": "g/L"
+    },
+    "concentration_ppm": {
+      "label": "Initial concentration",
+      "unit": "ppm"
+    },
+    "pH": {
+      "label": "pH",
+      "unit": "dimensionless"
+    }
+  },
+  "input_name": "levo_design.csv",
+  "provenance": {
+    "kind": "bundled_example",
+    "example": "levo_design.csv"
+  },
+  "import_options": {}
+}

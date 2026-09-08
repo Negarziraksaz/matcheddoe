@@ -1,0 +1,6 @@
+﻿column,missing_cells,observed_cells,unique_observed
+sample_id,0,15,15
+dose_g_L,0,15,3
+concentration_ppm,0,15,3
+pH,0,15,3
+response,0,15,15

@@ -1,0 +1,4 @@
+﻿response,source,ss,df,ms,f,p,ss_convention,inference
+response,model,1294.1108500000003,6,215.6851416666667,44.358525349334315,1.0374896915919078e-05,overall regression with intercept; no term-level SS,available under independent-run assumptions
+response,residual,38.898523333333216,8,4.862315416666652,,,overall regression with intercept; no term-level SS,available under independent-run assumptions
+response,total_corrected,1333.0093733333335,14,95.21495523809526,,,overall regression with intercept; no term-level SS,available under independent-run assumptions

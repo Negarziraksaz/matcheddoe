@@ -1,0 +1,1 @@
+141 of 441 supported grid candidates are nondominated for the declared directions. The open circles identify predicted tradeoffs, not a joint optimum or independent confirmation. All candidate conditions remain in candidate_tradeoff.csv.

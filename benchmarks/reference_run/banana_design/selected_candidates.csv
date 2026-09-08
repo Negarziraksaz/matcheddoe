@@ -1,0 +1,3 @@
+﻿response,direction,factor::time_h,factor::temperature_C,predicted_response,prediction_interval95_low,prediction_interval95_high,inside_observed_convex_hull,measured_confirmation
+moisture_percent,minimise,48.0,55.0,26.299999999999976,18.822092578040902,33.77790742195905,True,False
+colour_deltaE,minimise,24.0,45.0,16.922222222222214,15.069973873511346,18.774470570933083,True,False

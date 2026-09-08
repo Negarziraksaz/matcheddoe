@@ -1,0 +1,2115 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MatchedDoE — response surfaces at matched conditions</title><style>
+body{font-family:"Times New Roman",serif;font-size:10pt;line-height:1.5;max-width:1100px;margin:30px auto;padding:0 24px;color:#111}
+h1,h2{font-size:12pt;font-weight:bold} table{border-collapse:collapse;margin:16px auto;width:100%;table-layout:fixed;font-size:10pt}
+th,td{padding:4px 7px;text-align:center;border:0;overflow-wrap:anywhere}thead{border-top:1px solid black;border-bottom:1px solid black}tbody{border-bottom:1px solid black}
+nav{padding:12px 0;border-bottom:1px solid #bbb;line-height:1.8}a{color:#17466b}.diagnostic{break-inside:avoid}img{max-width:100%;max-height:230mm;object-fit:contain}pre{white-space:pre-wrap;overflow-wrap:anywhere}section{margin-top:28px}@page{size:A4;margin:16mm 15mm}@media print{nav{display:none}body{margin:0}img{max-height:230mm}thead{display:table-header-group}tr{break-inside:avoid}}
+</style><h1>MatchedDoE — response surfaces at matched conditions</h1><nav><a href="#summary">Summary</a> · <a href="#figure">Analysis overview</a> · <a href="#figure_response_2">Fitted response: colour_deltaE</a> · <a href="#diagnostic_coefficients">Coded coefficient estimates</a> · <a href="#diagnostic_surface_1">Supported response surface - moisture_percent</a> · <a href="#diagnostic_surface_2">Supported response surface - colour_deltaE</a> · <a href="#diagnostic_influence">Observed-run influence</a> · <a href="#diagnostic_tradeoff">Two-response tradeoff</a><br><a href="#tables">Complete evidence tables</a></nav><h2 id="summary">Result summary</h2><p>Input: banana_design.csv; 9 rows. Computation completed; evidence availability: complete.</p><p>Moisture content (%): 9 matched runs; fitted R² = 0.9527; residual sum of squares = 18.6533. These are in-sample fits, not independent confirmation experiments.</p><p>Colour change (Delta E): 9 matched runs; fitted R² = 0.9966; residual sum of squares = 1.14444. These are in-sample fits, not independent confirmation experiments.</p>
+<section class="diagnostic" id="figure"><h2>Figure 1. Analysis overview</h2><img src="figure.png" alt="Analysis overview"><p>Figure 1. In-sample fit and residuals for moisture_percent; these panels do not show independent prediction validation. All responses are retained in the result tables.</p></section><section class="diagnostic" id="figure_response_2"><h2>Figure 2. Fitted response: colour_deltaE</h2><img src="figure_response_2.png" alt="Fitted response: colour_deltaE"><p>Figure 1. In-sample fit and residuals for colour_deltaE; these panels do not show independent prediction validation. All responses are retained in the result tables.</p></section><section class="diagnostic" id="diagnostic_coefficients"><h2>Figure 3. Coded coefficient estimates</h2><img src="diagnostic_coefficients.png" alt="Coded coefficient estimates"><p>Dots show coefficients for non-intercept terms. Lines are the existing pointwise 95% coefficient intervals where estimable and independence was declared. An absent interval is not zero uncertainty. Full coefficients, including intercept, are retained in coefficients.csv.</p></section><section class="diagnostic" id="diagnostic_surface_1"><h2>Figure 4. Supported response surface - moisture_percent</h2><img src="diagnostic_surface_1.png" alt="Supported response surface - moisture_percent"><p>Fitted values on the common supported grid. Open circles mark 9 observed settings in this plane. Blank cells are outside the observed design hull. The pixel boundaries show grid cells; predictions are defined at the grid centres. No independent confirmation or continuous optimum is implied.</p></section><section class="diagnostic" id="diagnostic_surface_2"><h2>Figure 5. Supported response surface - colour_deltaE</h2><img src="diagnostic_surface_2.png" alt="Supported response surface - colour_deltaE"><p>Fitted values on the common supported grid. Open circles mark 9 observed settings in this plane. Blank cells are outside the observed design hull. The pixel boundaries show grid cells; predictions are defined at the grid centres. No independent confirmation or continuous optimum is implied.</p></section><section class="diagnostic" id="diagnostic_influence"><h2>Figure 6. Observed-run influence</h2><img src="diagnostic_influence.png" alt="Observed-run influence"><p>Cook&#x27;s distance measures fitted-model sensitivity under its assumptions. The 4/n line is a screening heuristic only; no observation is automatically removed. Internal studentization and leverage are exported in influence_diagnostics.csv.</p></section><section class="diagnostic" id="diagnostic_tradeoff"><h2>Figure 7. Two-response tradeoff</h2><img src="diagnostic_tradeoff.png" alt="Two-response tradeoff"><p>141 of 441 supported grid candidates are nondominated for the declared directions. The open circles identify predicted tradeoffs, not a joint optimum or independent confirmation. All candidate conditions remain in candidate_tradeoff.csv.</p></section><h2>Interpretation and limits</h2><ul><li>All responses use the same complete observed runs and the same candidate conditions. Missing responses and missing factor settings are never imputed.</li><li>Coefficient inference assumes independent errors with constant variance and a suitable response-surface form. Repeated factor settings are treated as independent experimental replicates only if that is how they were collected.</li><li>Candidate maxima/minima are predictions on a finite grid inside the observed convex hull. They are not measured confirmations or guaranteed continuous optima.</li><li>No repeated setting is present, so pure error and lack-of-fit tests are unavailable.</li><li>Pointwise prediction intervals are conditional on the fitted polynomial and normal-error assumptions; intervals at selected optima do not account for the search or model selection.</li></ul>
+<div id="tables"><section><h2>Table 1. model summary</h2><p></p><p> Part 1/3.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>n</th>
+      <th>r2_fitted</th>
+      <th>adjusted_r2</th>
+      <th>residual_ss</th>
+      <th>residual_df</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>moisture_percent</td>
+      <td>9</td>
+      <td>0.9527</td>
+      <td>0.905399</td>
+      <td>18.6533</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>9</td>
+      <td>0.996575</td>
+      <td>0.993151</td>
+      <td>1.14444</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/3.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>pure_error_ss</th>
+      <th>pure_error_df</th>
+      <th>lack_of_fit_ss</th>
+      <th>lack_of_fit_df</th>
+      <th>lack_of_fit_f</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>moisture_percent</td>
+      <td>None</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>None</td>
+      <td>0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table><p> Part 3/3.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>lack_of_fit_p</th>
+      <th>leave_one_run_out_press</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>moisture_percent</td>
+      <td>None</td>
+      <td>94.4325</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>None</td>
+      <td>5.79375</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 2. anova</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>source</th>
+      <th>ss</th>
+      <th>df</th>
+      <th>ms</th>
+      <th>f</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>moisture_percent</td>
+      <td>model</td>
+      <td>375.707</td>
+      <td>4</td>
+      <td>93.9267</td>
+      <td>20.1415</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>residual</td>
+      <td>18.6533</td>
+      <td>4</td>
+      <td>4.66333</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>total_corrected</td>
+      <td>394.36</td>
+      <td>8</td>
+      <td>49.295</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>model</td>
+      <td>333.044</td>
+      <td>4</td>
+      <td>83.2611</td>
+      <td>291.01</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>residual</td>
+      <td>1.14444</td>
+      <td>4</td>
+      <td>0.286111</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>total_corrected</td>
+      <td>334.189</td>
+      <td>8</td>
+      <td>41.7736</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>p</th>
+      <th>ss_convention</th>
+      <th>inference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>moisture_percent</td>
+      <td>0.00650029</td>
+      <td>overall regression with intercept; no term-level SS</td>
+      <td>available under independent-run assumptions</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>NaN</td>
+      <td>overall regression with intercept; no term-level SS</td>
+      <td>available under independent-run assumptions</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>NaN</td>
+      <td>overall regression with intercept; no term-level SS</td>
+      <td>available under independent-run assumptions</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>3.51022e-05</td>
+      <td>overall regression with intercept; no term-level SS</td>
+      <td>available under independent-run assumptions</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>NaN</td>
+      <td>overall regression with intercept; no term-level SS</td>
+      <td>available under independent-run assumptions</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>NaN</td>
+      <td>overall regression with intercept; no term-level SS</td>
+      <td>available under independent-run assumptions</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 3. equation comparison</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></section><section><h2>Table 4. selected candidates</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>direction</th>
+      <th>factor::time_h</th>
+      <th>factor::temperature_C</th>
+      <th>predicted_response</th>
+      <th>prediction_interval95_low</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>moisture_percent</td>
+      <td>minimise</td>
+      <td>48</td>
+      <td>55</td>
+      <td>26.3</td>
+      <td>18.8221</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>minimise</td>
+      <td>24</td>
+      <td>45</td>
+      <td>16.9222</td>
+      <td>15.07</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>prediction_interval95_high</th>
+      <th>inside_observed_convex_hull</th>
+      <th>measured_confirmation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>moisture_percent</td>
+      <td>33.7779</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>18.7745</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table></section><h2>Audit appendix</h2><p>Complete tables are supplied as CSV; previews below retain the stated row and column limits.</p><section><h2>Table 5. input audit</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>column</th>
+      <th>missing_cells</th>
+      <th>observed_cells</th>
+      <th>unique_observed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sample_id</td>
+      <td>0</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>time_h</td>
+      <td>0</td>
+      <td>9</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>temperature_C</td>
+      <td>0</td>
+      <td>9</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>0</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 6. excluded runs</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>reason</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></section><section><h2>Table 7. observed factor values</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>factor</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>time_h</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>temperature_C</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>time_h</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>temperature_C</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>time_h</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>temperature_C</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>time_h</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>temperature_C</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>time_h</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>temperature_C</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>time_h</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>temperature_C</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>time_h</td>
+      <td>48</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>temperature_C</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>time_h</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>temperature_C</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>time_h</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>temperature_C</td>
+      <td>50</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 8. factor coding</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>factor</th>
+      <th>low</th>
+      <th>centre</th>
+      <th>high</th>
+      <th>half_range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>time_h</td>
+      <td>24</td>
+      <td>36</td>
+      <td>48</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>temperature_C</td>
+      <td>45</td>
+      <td>50</td>
+      <td>55</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 9. design check</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>complete_runs</th>
+      <th>unique_settings</th>
+      <th>coefficients</th>
+      <th>rank</th>
+      <th>residual_df</th>
+      <th>condition_number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>9</td>
+      <td>9</td>
+      <td>5</td>
+      <td>5</td>
+      <td>4</td>
+      <td>4.24264</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 10. model support</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>terms</th>
+      <th>rank</th>
+      <th>estimable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>linear</td>
+      <td>3</td>
+      <td>3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>2fi</td>
+      <td>4</td>
+      <td>4</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>additive_quadratic</td>
+      <td>5</td>
+      <td>5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>quadratic</td>
+      <td>6</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 11. candidate column labels</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>role</th>
+      <th>original_label</th>
+      <th>export_column</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>factors</td>
+      <td>time_h</td>
+      <td>factor::time_h</td>
+    </tr>
+    <tr>
+      <td>factors</td>
+      <td>temperature_C</td>
+      <td>factor::temperature_C</td>
+    </tr>
+    <tr>
+      <td>predictions</td>
+      <td>moisture_percent</td>
+      <td>prediction::moisture_percent</td>
+    </tr>
+    <tr>
+      <td>predictions</td>
+      <td>colour_deltaE</td>
+      <td>prediction::colour_deltaE</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 12. coefficients</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>term</th>
+      <th>coefficient_coded</th>
+      <th>standard_error</th>
+      <th>ci95_low</th>
+      <th>ci95_high</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>moisture_percent</td>
+      <td>Intercept</td>
+      <td>33.0333</td>
+      <td>1.60958</td>
+      <td>28.5644</td>
+      <td>37.5022</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>time_h</td>
+      <td>-7.13333</td>
+      <td>0.881602</td>
+      <td>-9.58105</td>
+      <td>-4.68561</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>temperature_C</td>
+      <td>-3</td>
+      <td>0.881602</td>
+      <td>-5.44772</td>
+      <td>-0.55228</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>time_h^2</td>
+      <td>2.8</td>
+      <td>1.52698</td>
+      <td>-1.43958</td>
+      <td>7.03958</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>temperature_C^2</td>
+      <td>0.6</td>
+      <td>1.52698</td>
+      <td>-3.63958</td>
+      <td>4.83958</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>Intercept</td>
+      <td>29.7222</td>
+      <td>0.398686</td>
+      <td>28.6153</td>
+      <td>30.8292</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>time_h</td>
+      <td>6.68333</td>
+      <td>0.218369</td>
+      <td>6.07704</td>
+      <td>7.28962</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>temperature_C</td>
+      <td>2.65</td>
+      <td>0.218369</td>
+      <td>2.04371</td>
+      <td>3.25629</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>time_h^2</td>
+      <td>-3.38333</td>
+      <td>0.378227</td>
+      <td>-4.43346</td>
+      <td>-2.33321</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>temperature_C^2</td>
+      <td>-0.0833333</td>
+      <td>0.378227</td>
+      <td>-1.13346</td>
+      <td>0.966793</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 13. predictions</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>response</th>
+      <th>reference</th>
+      <th>prediction</th>
+      <th>residual</th>
+      <th>leverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>moisture_percent</td>
+      <td>31.4</td>
+      <td>30.6333</td>
+      <td>-0.766667</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>moisture_percent</td>
+      <td>29.7</td>
+      <td>28.7</td>
+      <td>-1</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>moisture_percent</td>
+      <td>45.7</td>
+      <td>46.5667</td>
+      <td>0.866667</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>moisture_percent</td>
+      <td>44.7</td>
+      <td>42.9667</td>
+      <td>-1.73333</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>moisture_percent</td>
+      <td>26.4</td>
+      <td>26.3</td>
+      <td>-0.1</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>moisture_percent</td>
+      <td>38.6</td>
+      <td>36.6333</td>
+      <td>-1.96667</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>moisture_percent</td>
+      <td>31.2</td>
+      <td>32.3</td>
+      <td>1.1</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>moisture_percent</td>
+      <td>39.7</td>
+      <td>40.5667</td>
+      <td>0.866667</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>moisture_percent</td>
+      <td>30.3</td>
+      <td>33.0333</td>
+      <td>2.73333</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>colour_deltaE</td>
+      <td>31.7</td>
+      <td>32.2889</td>
+      <td>0.588889</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>colour_deltaE</td>
+      <td>32.5</td>
+      <td>33.0222</td>
+      <td>0.522222</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>colour_deltaE</td>
+      <td>16.7</td>
+      <td>16.9222</td>
+      <td>0.222222</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>colour_deltaE</td>
+      <td>19.8</td>
+      <td>19.6556</td>
+      <td>-0.144444</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>colour_deltaE</td>
+      <td>36.1</td>
+      <td>35.5889</td>
+      <td>-0.511111</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>colour_deltaE</td>
+      <td>27.2</td>
+      <td>26.9889</td>
+      <td>-0.211111</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>colour_deltaE</td>
+      <td>30.3</td>
+      <td>30.2889</td>
+      <td>-0.0111111</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>colour_deltaE</td>
+      <td>22.3</td>
+      <td>22.2222</td>
+      <td>-0.0777778</td>
+      <td>0.555556</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>colour_deltaE</td>
+      <td>30.1</td>
+      <td>29.7222</td>
+      <td>-0.377778</td>
+      <td>0.555556</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>prediction_kind</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>fitted_on_same_runs</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 14. candidates</h2><p> Showing 12 of 441 rows; the complete table is in candidates.csv.</p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>factor::time_h</th>
+      <th>factor::temperature_C</th>
+      <th>prediction::moisture_percent</th>
+      <th>prediction::colour_deltaE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>24</td>
+      <td>45</td>
+      <td>46.5667</td>
+      <td>16.9222</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>45.5</td>
+      <td>46.1527</td>
+      <td>17.2031</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>46</td>
+      <td>45.7507</td>
+      <td>17.4822</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>46.5</td>
+      <td>45.3607</td>
+      <td>17.7597</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>47</td>
+      <td>44.9827</td>
+      <td>18.0356</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>47.5</td>
+      <td>44.6167</td>
+      <td>18.3097</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>48</td>
+      <td>44.2627</td>
+      <td>18.5822</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>48.5</td>
+      <td>43.9207</td>
+      <td>18.8531</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>49</td>
+      <td>43.5907</td>
+      <td>19.1222</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>49.5</td>
+      <td>43.2727</td>
+      <td>19.3897</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>50</td>
+      <td>42.9667</td>
+      <td>19.6556</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>50.5</td>
+      <td>42.6727</td>
+      <td>19.9197</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 15. group diagnostics</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>group</th>
+      <th>n</th>
+      <th>reference_mean</th>
+      <th>prediction_mean</th>
+      <th>rmse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>1</td>
+      <td>1</td>
+      <td>31.7</td>
+      <td>32.2889</td>
+      <td>0.588889</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>2</td>
+      <td>1</td>
+      <td>32.5</td>
+      <td>33.0222</td>
+      <td>0.522222</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>3</td>
+      <td>1</td>
+      <td>16.7</td>
+      <td>16.9222</td>
+      <td>0.222222</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>4</td>
+      <td>1</td>
+      <td>19.8</td>
+      <td>19.6556</td>
+      <td>0.144444</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>5</td>
+      <td>1</td>
+      <td>36.1</td>
+      <td>35.5889</td>
+      <td>0.511111</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>6</td>
+      <td>1</td>
+      <td>27.2</td>
+      <td>26.9889</td>
+      <td>0.211111</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>7</td>
+      <td>1</td>
+      <td>30.3</td>
+      <td>30.2889</td>
+      <td>0.0111111</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>8</td>
+      <td>1</td>
+      <td>22.3</td>
+      <td>22.2222</td>
+      <td>0.0777778</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>9</td>
+      <td>1</td>
+      <td>30.1</td>
+      <td>29.7222</td>
+      <td>0.377778</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>1</td>
+      <td>1</td>
+      <td>31.4</td>
+      <td>30.6333</td>
+      <td>0.766667</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>2</td>
+      <td>1</td>
+      <td>29.7</td>
+      <td>28.7</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>3</td>
+      <td>1</td>
+      <td>45.7</td>
+      <td>46.5667</td>
+      <td>0.866667</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>4</td>
+      <td>1</td>
+      <td>44.7</td>
+      <td>42.9667</td>
+      <td>1.73333</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>5</td>
+      <td>1</td>
+      <td>26.4</td>
+      <td>26.3</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>6</td>
+      <td>1</td>
+      <td>38.6</td>
+      <td>36.6333</td>
+      <td>1.96667</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>7</td>
+      <td>1</td>
+      <td>31.2</td>
+      <td>32.3</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>8</td>
+      <td>1</td>
+      <td>39.7</td>
+      <td>40.5667</td>
+      <td>0.866667</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>9</td>
+      <td>1</td>
+      <td>30.3</td>
+      <td>33.0333</td>
+      <td>2.73333</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>mae</th>
+      <th>bias</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0.588889</td>
+      <td>0.588889</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0.522222</td>
+      <td>0.522222</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0.222222</td>
+      <td>0.222222</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0.144444</td>
+      <td>-0.144444</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0.511111</td>
+      <td>-0.511111</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0.211111</td>
+      <td>-0.211111</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0.0111111</td>
+      <td>-0.0111111</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0.0777778</td>
+      <td>-0.0777778</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0.377778</td>
+      <td>-0.377778</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>0.766667</td>
+      <td>-0.766667</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>0.866667</td>
+      <td>0.866667</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>1.73333</td>
+      <td>-1.73333</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>0.1</td>
+      <td>-0.1</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>1.96667</td>
+      <td>-1.96667</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>1.1</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>0.866667</td>
+      <td>0.866667</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>2.73333</td>
+      <td>2.73333</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 16. reference range diagnostics</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>reference_bin</th>
+      <th>lower_reference</th>
+      <th>upper_reference</th>
+      <th>reference_mean</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>0</td>
+      <td>16.7</td>
+      <td>22.3</td>
+      <td>19.6</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>1</td>
+      <td>22.3</td>
+      <td>30.1</td>
+      <td>28.65</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>2</td>
+      <td>30.1</td>
+      <td>31.7</td>
+      <td>31</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>3</td>
+      <td>31.7</td>
+      <td>36.1</td>
+      <td>34.3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>0</td>
+      <td>26.4</td>
+      <td>30.3</td>
+      <td>28.8</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>1</td>
+      <td>30.3</td>
+      <td>31.4</td>
+      <td>31.3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>2</td>
+      <td>31.4</td>
+      <td>39.7</td>
+      <td>39.15</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>3</td>
+      <td>39.7</td>
+      <td>45.7</td>
+      <td>45.2</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>response</th>
+      <th>n_groups</th>
+      <th>rmse</th>
+      <th>group_rmse</th>
+      <th>bias</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>3</td>
+      <td>0.159474</td>
+      <td>0.159474</td>
+      <td>-7.10543e-15</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>2</td>
+      <td>0.30601</td>
+      <td>0.30601</td>
+      <td>-0.294444</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>2</td>
+      <td>0.416481</td>
+      <td>0.416481</td>
+      <td>0.288889</td>
+    </tr>
+    <tr>
+      <td>colour_deltaE</td>
+      <td>2</td>
+      <td>0.516697</td>
+      <td>0.516697</td>
+      <td>0.00555556</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>3</td>
+      <td>1.68138</td>
+      <td>1.68138</td>
+      <td>0.544444</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>2</td>
+      <td>0.948098</td>
+      <td>0.948098</td>
+      <td>0.166667</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>2</td>
+      <td>1.51969</td>
+      <td>1.51969</td>
+      <td>-0.55</td>
+    </tr>
+    <tr>
+      <td>moisture_percent</td>
+      <td>2</td>
+      <td>1.37032</td>
+      <td>1.37032</td>
+      <td>-0.433333</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 17. influence diagnostics</h2><p></p><p> Part 1/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>response</th>
+      <th>leverage</th>
+      <th>internal_studentized_residual</th>
+      <th>cooks_distance</th>
+      <th>reference_cooks_threshold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>colour_deltaE</td>
+      <td>0.555556</td>
+      <td>1.65142</td>
+      <td>0.681796</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>colour_deltaE</td>
+      <td>0.555556</td>
+      <td>1.46447</td>
+      <td>0.536165</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>colour_deltaE</td>
+      <td>0.555556</td>
+      <td>0.623177</td>
+      <td>0.0970874</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>colour_deltaE</td>
+      <td>0.555556</td>
+      <td>-0.405065</td>
+      <td>0.0410194</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>colour_deltaE</td>
+      <td>0.555556</td>
+      <td>-1.43331</td>
+      <td>0.513592</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>colour_deltaE</td>
+      <td>0.555556</td>
+      <td>-0.592018</td>
+      <td>0.0876214</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>colour_deltaE</td>
+      <td>0.555556</td>
+      <td>-0.0311588</td>
+      <td>0.000242718</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>colour_deltaE</td>
+      <td>0.555556</td>
+      <td>-0.218112</td>
+      <td>0.0118932</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>colour_deltaE</td>
+      <td>0.555556</td>
+      <td>-1.0594</td>
+      <td>0.280583</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>moisture_percent</td>
+      <td>0.555556</td>
+      <td>-0.532537</td>
+      <td>0.0708989</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>moisture_percent</td>
+      <td>0.555556</td>
+      <td>-0.694613</td>
+      <td>0.120622</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>moisture_percent</td>
+      <td>0.555556</td>
+      <td>0.601998</td>
+      <td>0.0906004</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>moisture_percent</td>
+      <td>0.555556</td>
+      <td>-1.204</td>
+      <td>0.362402</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>moisture_percent</td>
+      <td>0.555556</td>
+      <td>-0.0694613</td>
+      <td>0.00120622</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>moisture_percent</td>
+      <td>0.555556</td>
+      <td>-1.36607</td>
+      <td>0.466539</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>moisture_percent</td>
+      <td>0.555556</td>
+      <td>0.764075</td>
+      <td>0.145952</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>moisture_percent</td>
+      <td>0.555556</td>
+      <td>0.601998</td>
+      <td>0.0906004</td>
+      <td>0.444444</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>moisture_percent</td>
+      <td>0.555556</td>
+      <td>1.89861</td>
+      <td>0.901179</td>
+      <td>0.444444</td>
+    </tr>
+  </tbody>
+</table><p> Part 2/2.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sample_id</th>
+      <th>exceeds_reference_threshold</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>True</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>True</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>True</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>True</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>False</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>True</td>
+      <td>descriptive influence flag; retain observation</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 18. candidate tradeoff</h2><p> Showing 24 of 441 rows; the complete table is in candidate_tradeoff.csv.</p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>factor::time_h</th>
+      <th>factor::temperature_C</th>
+      <th>prediction::moisture_percent</th>
+      <th>prediction::colour_deltaE</th>
+      <th>nondominated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>24</td>
+      <td>45</td>
+      <td>46.5667</td>
+      <td>16.9222</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>45.5</td>
+      <td>46.1527</td>
+      <td>17.2031</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>46</td>
+      <td>45.7507</td>
+      <td>17.4822</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>46.5</td>
+      <td>45.3607</td>
+      <td>17.7597</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>47</td>
+      <td>44.9827</td>
+      <td>18.0356</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>47.5</td>
+      <td>44.6167</td>
+      <td>18.3097</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>48</td>
+      <td>44.2627</td>
+      <td>18.5822</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>48.5</td>
+      <td>43.9207</td>
+      <td>18.8531</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>49</td>
+      <td>43.5907</td>
+      <td>19.1222</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>49.5</td>
+      <td>43.2727</td>
+      <td>19.3897</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>50</td>
+      <td>42.9667</td>
+      <td>19.6556</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>50.5</td>
+      <td>42.6727</td>
+      <td>19.9197</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>51</td>
+      <td>42.3907</td>
+      <td>20.1822</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>51.5</td>
+      <td>42.1207</td>
+      <td>20.4431</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>52</td>
+      <td>41.8627</td>
+      <td>20.7022</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>52.5</td>
+      <td>41.6167</td>
+      <td>20.9597</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>53</td>
+      <td>41.3827</td>
+      <td>21.2156</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>53.5</td>
+      <td>41.1607</td>
+      <td>21.4697</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>54</td>
+      <td>40.9507</td>
+      <td>21.7222</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>54.5</td>
+      <td>40.7527</td>
+      <td>21.9731</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>55</td>
+      <td>40.5667</td>
+      <td>22.2222</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>25.2</td>
+      <td>45</td>
+      <td>45.3213</td>
+      <td>18.2334</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>25.2</td>
+      <td>45.5</td>
+      <td>44.9073</td>
+      <td>18.5142</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>25.2</td>
+      <td>46</td>
+      <td>44.5053</td>
+      <td>18.7934</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table></section><section><h2>Table 19. capabilities</h2><p></p><p></p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>capability</th>
+      <th>available</th>
+      <th>level</th>
+      <th>reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>input_quality</td>
+      <td>True</td>
+      <td>descriptive</td>
+      <td>Parsed rows and selected field availability are retained.</td>
+    </tr>
+    <tr>
+      <td>paired_descriptions</td>
+      <td>True</td>
+      <td>descriptive</td>
+      <td>Available finite reference/comparison pairs; no missing reference is invented.</td>
+    </tr>
+    <tr>
+      <td>fitted_model</td>
+      <td>True</td>
+      <td>fitting</td>
+      <td>Rank-supported coefficients are available.</td>
+    </tr>
+    <tr>
+      <td>held_out_evaluation</td>
+      <td>False</td>
+      <td>evaluation</td>
+      <td>No held-out model evaluation is supported by this run.</td>
+    </tr>
+    <tr>
+      <td>conditional_uncertainty</td>
+      <td>True</td>
+      <td>inference</td>
+      <td>Only the stated estimand and confirmed independence/variance assumptions support these intervals.</td>
+    </tr>
+  </tbody>
+</table></section></div><h2>Analysis settings</h2><pre>{
+  &quot;input_sha256&quot;: &quot;501f23ba65f6e83efc8fc5a4019a13097d897727118051d4dd88f68de77e5682&quot;,
+  &quot;factors&quot;: [
+    &quot;time_h&quot;,
+    &quot;temperature_C&quot;
+  ],
+  &quot;candidate_columns&quot;: {
+    &quot;factors&quot;: {
+      &quot;time_h&quot;: &quot;factor::time_h&quot;,
+      &quot;temperature_C&quot;: &quot;factor::temperature_C&quot;
+    },
+    &quot;predictions&quot;: {
+      &quot;moisture_percent&quot;: &quot;prediction::moisture_percent&quot;,
+      &quot;colour_deltaE&quot;: &quot;prediction::colour_deltaE&quot;
+    }
+  },
+  &quot;responses&quot;: [
+    &quot;moisture_percent&quot;,
+    &quot;colour_deltaE&quot;
+  ],
+  &quot;model&quot;: &quot;additive_quadratic&quot;,
+  &quot;response_mode&quot;: &quot;matched&quot;,
+  &quot;grid_points_per_factor&quot;: 21,
+  &quot;independent_runs_confirmed&quot;: true,
+  &quot;candidate_status&quot;: &quot;supported finite grid&quot;,
+  &quot;software_source_sha256&quot;: &quot;5c0dc36342d076126ecf4ab93b52c252873a213223e17ec732d253218d62a267&quot;,
+  &quot;source_hash_definition&quot;: &quot;SHA256 of sorted relative Python paths and file bytes, each terminated by a NUL byte&quot;,
+  &quot;application&quot;: &quot;matcheddoe&quot;,
+  &quot;software_version&quot;: &quot;0.5.2&quot;,
+  &quot;configuration_schema_version&quot;: &quot;1.2&quot;,
+  &quot;call_parameters&quot;: {
+    &quot;factors&quot;: [
+      &quot;time_h&quot;,
+      &quot;temperature_C&quot;
+    ],
+    &quot;responses&quot;: [
+      &quot;moisture_percent&quot;,
+      &quot;colour_deltaE&quot;
+    ],
+    &quot;id_col&quot;: &quot;sample_id&quot;,
+    &quot;model&quot;: &quot;additive_quadratic&quot;,
+    &quot;directions&quot;: {
+      &quot;moisture_percent&quot;: &quot;minimise&quot;,
+      &quot;colour_deltaE&quot;: &quot;minimise&quot;
+    },
+    &quot;grid_points&quot;: 21,
+    &quot;independent_runs&quot;: true,
+    &quot;reported_equations&quot;: null,
+    &quot;response_mode&quot;: &quot;matched&quot;,
+    &quot;max_design_cells&quot;: 2000000,
+    &quot;max_grid_candidates&quot;: 100000,
+    &quot;column_metadata&quot;: {
+      &quot;moisture_percent&quot;: {
+        &quot;label&quot;: &quot;Moisture content&quot;,
+        &quot;unit&quot;: &quot;%&quot;
+      },
+      &quot;colour_deltaE&quot;: {
+        &quot;label&quot;: &quot;Colour change&quot;,
+        &quot;unit&quot;: &quot;Delta E&quot;
+      },
+      &quot;time_h&quot;: {
+        &quot;label&quot;: &quot;Drying time&quot;,
+        &quot;unit&quot;: &quot;h&quot;
+      },
+      &quot;temperature_C&quot;: {
+        &quot;label&quot;: &quot;Drying temperature&quot;,
+        &quot;unit&quot;: &quot;deg C&quot;
+      }
+    },
+    &quot;input_name&quot;: &quot;banana_design.csv&quot;,
+    &quot;provenance&quot;: {
+      &quot;kind&quot;: &quot;bundled_example&quot;,
+      &quot;example&quot;: &quot;banana_design.csv&quot;
+    }
+  },
+  &quot;input_name&quot;: &quot;banana_design.csv&quot;,
+  &quot;columns&quot;: {
+    &quot;sample_id&quot;: {
+      &quot;label&quot;: &quot;sample_id&quot;,
+      &quot;unit&quot;: &quot;not provided&quot;
+    },
+    &quot;time_h&quot;: {
+      &quot;label&quot;: &quot;Drying time&quot;,
+      &quot;unit&quot;: &quot;h&quot;
+    },
+    &quot;temperature_C&quot;: {
+      &quot;label&quot;: &quot;Drying temperature&quot;,
+      &quot;unit&quot;: &quot;deg C&quot;
+    },
+    &quot;moisture_percent&quot;: {
+      &quot;label&quot;: &quot;Moisture content&quot;,
+      &quot;unit&quot;: &quot;%&quot;
+    },
+    &quot;colour_deltaE&quot;: {
+      &quot;label&quot;: &quot;Colour change&quot;,
+      &quot;unit&quot;: &quot;Delta E&quot;
+    }
+  },
+  &quot;provenance&quot;: {
+    &quot;kind&quot;: &quot;bundled_example&quot;,
+    &quot;example&quot;: &quot;banana_design.csv&quot;,
+    &quot;original_source&quot;: {
+      &quot;id&quot;: &quot;D05&quot;,
+      &quot;repository_id&quot;: &quot;87tfjn5s2h&quot;,
+      &quot;version&quot;: 1,
+      &quot;title&quot;: &quot;Data from greenhouse solar drying using response surface methodology for the production of dried banana&quot;,
+      &quot;creators&quot;: [
+        &quot;Nopparat Suriyachai&quot;
+      ],
+      &quot;doi&quot;: &quot;10.17632/87tfjn5s2h.1&quot;,
+      &quot;source_url&quot;: &quot;https://data.mendeley.com/datasets/87tfjn5s2h/1&quot;,
+      &quot;license&quot;: &quot;CC-BY-4.0&quot;,
+      &quot;license_url&quot;: &quot;https://creativecommons.org/licenses/by/4.0/&quot;,
+      &quot;checked_on&quot;: &quot;2026-09-07&quot;,
+      &quot;raw_data_included_in_delivery&quot;: false,
+      &quot;downloads&quot;: [
+        {
+          &quot;file&quot;: &quot;Data accessibility.xlsx&quot;,
+          &quot;url&quot;: &quot;https://data.mendeley.com/public-files/datasets/87tfjn5s2h/files/c558268a-0c15-43f0-8598-b7f7b6a38d02/file_downloaded&quot;,
+          &quot;bytes&quot;: 331168,
+          &quot;sha256&quot;: &quot;fc89166d2b63e68b398699b79bb75212d23247ffad5a92e2ef10259990c61d97&quot;
+        }
+      ],
+      &quot;processed_examples_included&quot;: true
+    },
+    &quot;transformations&quot;: &quot;Nine distinct Data and Design settings; time=36+12*coded_time, temperature=50+5*coded_temperature; deposited moisture and colour responses. No independent repeated treatment settings; no pure-error estimate.&quot;,
+    &quot;column_metadata&quot;: {
+      &quot;moisture_percent&quot;: {
+        &quot;label&quot;: &quot;Moisture content&quot;,
+        &quot;unit&quot;: &quot;%&quot;
+      },
+      &quot;colour_deltaE&quot;: {
+        &quot;label&quot;: &quot;Colour change&quot;,
+        &quot;unit&quot;: &quot;Delta E&quot;
+      },
+      &quot;time_h&quot;: {
+        &quot;label&quot;: &quot;Drying time&quot;,
+        &quot;unit&quot;: &quot;h&quot;
+      },
+      &quot;temperature_C&quot;: {
+        &quot;label&quot;: &quot;Drying temperature&quot;,
+        &quot;unit&quot;: &quot;deg C&quot;
+      }
+    },
+    &quot;prepared_csv_sha256&quot;: &quot;d92dc8b0cce05ba05c16987e7f4c94a99e83fa997944b8a8b45d2c6c29e62fbe&quot;,
+    &quot;code_license&quot;: &quot;MIT&quot;,
+    &quot;data_license&quot;: &quot;CC-BY-4.0&quot;
+  },
+  &quot;input_hash_definition&quot;: &quot;SHA256 of parsed table serialized as canonical CSV; not original file bytes&quot;,
+  &quot;n_input_rows&quot;: 9,
+  &quot;computation_status&quot;: &quot;completed&quot;,
+  &quot;evidence_status&quot;: &quot;complete&quot;,
+  &quot;deterministic_protocol&quot;: {
+    &quot;evaluation&quot;: &quot;in-sample fitted design&quot;,
+    &quot;candidate_grid_points_per_factor&quot;: 21
+  },
+  &quot;input_preparation&quot;: {
+    &quot;generated_row_id&quot;: null,
+    &quot;row_id_meaning&quot;: &quot;Source observation ID&quot;,
+    &quot;import&quot;: {
+      &quot;worksheet&quot;: null,
+      &quot;header_row&quot;: 1,
+      &quot;separator&quot;: &quot;,&quot;,
+      &quot;encoding&quot;: &quot;utf-8-sig&quot;,
+      &quot;notices&quot;: [],
+      &quot;decimal&quot;: &quot;.&quot;,
+      &quot;missing_tokens&quot;: [],
+      &quot;column_mapping&quot;: [
+        {
+          &quot;position&quot;: 1,
+          &quot;source_header&quot;: &quot;sample_id&quot;,
+          &quot;analysis_header&quot;: &quot;sample_id&quot;
+        },
+        {
+          &quot;position&quot;: 2,
+          &quot;source_header&quot;: &quot;time_h&quot;,
+          &quot;analysis_header&quot;: &quot;time_h&quot;
+        },
+        {
+          &quot;position&quot;: 3,
+          &quot;source_header&quot;: &quot;temperature_C&quot;,
+          &quot;analysis_header&quot;: &quot;temperature_C&quot;
+        },
+        {
+          &quot;position&quot;: 4,
+          &quot;source_header&quot;: &quot;moisture_percent&quot;,
+          &quot;analysis_header&quot;: &quot;moisture_percent&quot;
+        },
+        {
+          &quot;position&quot;: 5,
+          &quot;source_header&quot;: &quot;colour_deltaE&quot;,
+          &quot;analysis_header&quot;: &quot;colour_deltaE&quot;
+        }
+      ],
+      &quot;max_cells&quot;: 2000000,
+      &quot;max_bytes&quot;: 52428800
+    },
+    &quot;original_parsed_input_sha256&quot;: &quot;501f23ba65f6e83efc8fc5a4019a13097d897727118051d4dd88f68de77e5682&quot;
+  },
+  &quot;diagnostics&quot;: [
+    {
+      &quot;table&quot;: &quot;group_diagnostics&quot;,
+      &quot;question&quot;: &quot;Which physical groups have the largest errors?&quot;,
+      &quot;interpretation&quot;: &quot;One summary per method and physical group; group means and within-group RMSE are different quantities. No rows are excluded.&quot;,
+      &quot;rows&quot;: 18
+    },
+    {
+      &quot;table&quot;: &quot;reference_range_diagnostics&quot;,
+      &quot;question&quot;: &quot;Does error vary across the measured response range?&quot;,
+      &quot;interpretation&quot;: &quot;Up to four shared reference-quantile bins, determined after prediction for diagnosis only. Bin counts and group counts are retained; no uncertainty is inferred.&quot;,
+      &quot;rows&quot;: 8
+    },
+    {
+      &quot;table&quot;: &quot;influence_diagnostics&quot;,
+      &quot;question&quot;: &quot;Are fitted coefficients sensitive to a particular observed run?&quot;,
+      &quot;interpretation&quot;: &quot;Internal studentization and Cook&#x27;s distance require estimable residual variance and the independence declaration. 4/n is a review heuristic, never an automatic removal rule.&quot;,
+      &quot;rows&quot;: 18
+    },
+    {
+      &quot;table&quot;: &quot;candidate_tradeoff&quot;,
+      &quot;question&quot;: &quot;Which supported candidates offer a tradeoff between the two response objectives?&quot;,
+      &quot;interpretation&quot;: &quot;Exact nondominance on the finite common candidate grid, using the declared objective directions. Fitted predictions, not measured confirmation or a continuous optimum.&quot;,
+      &quot;rows&quot;: 441
+    }
+  ],
+  &quot;capabilities&quot;: [
+    {
+      &quot;capability&quot;: &quot;input_quality&quot;,
+      &quot;available&quot;: true,
+      &quot;level&quot;: &quot;descriptive&quot;,
+      &quot;reason&quot;: &quot;Parsed rows and selected field availability are retained.&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;paired_descriptions&quot;,
+      &quot;available&quot;: true,
+      &quot;level&quot;: &quot;descriptive&quot;,
+      &quot;reason&quot;: &quot;Available finite reference/comparison pairs; no missing reference is invented.&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;fitted_model&quot;,
+      &quot;available&quot;: true,
+      &quot;level&quot;: &quot;fitting&quot;,
+      &quot;reason&quot;: &quot;Rank-supported coefficients are available.&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;held_out_evaluation&quot;,
+      &quot;available&quot;: false,
+      &quot;level&quot;: &quot;evaluation&quot;,
+      &quot;reason&quot;: &quot;No held-out model evaluation is supported by this run.&quot;
+    },
+    {
+      &quot;capability&quot;: &quot;conditional_uncertainty&quot;,
+      &quot;available&quot;: true,
+      &quot;level&quot;: &quot;inference&quot;,
+      &quot;reason&quot;: &quot;Only the stated estimand and confirmed independence/variance assumptions support these intervals.&quot;
+    }
+  ],
+  &quot;evidence_summary&quot;: &quot;Results with conditional uncertainty; review assumptions&quot;,
+  &quot;import_options&quot;: {},
+  &quot;export_config&quot;: {
+    &quot;factors&quot;: [
+      &quot;time_h&quot;,
+      &quot;temperature_C&quot;
+    ],
+    &quot;responses&quot;: [
+      &quot;moisture_percent&quot;,
+      &quot;colour_deltaE&quot;
+    ],
+    &quot;id_col&quot;: &quot;sample_id&quot;,
+    &quot;model&quot;: &quot;additive_quadratic&quot;,
+    &quot;directions&quot;: {
+      &quot;moisture_percent&quot;: &quot;minimise&quot;,
+      &quot;colour_deltaE&quot;: &quot;minimise&quot;
+    },
+    &quot;grid_points&quot;: 21,
+    &quot;independent_runs&quot;: true,
+    &quot;reported_equations&quot;: null,
+    &quot;response_mode&quot;: &quot;matched&quot;,
+    &quot;max_design_cells&quot;: 2000000,
+    &quot;max_grid_candidates&quot;: 100000,
+    &quot;column_metadata&quot;: {
+      &quot;moisture_percent&quot;: {
+        &quot;label&quot;: &quot;Moisture content&quot;,
+        &quot;unit&quot;: &quot;%&quot;
+      },
+      &quot;colour_deltaE&quot;: {
+        &quot;label&quot;: &quot;Colour change&quot;,
+        &quot;unit&quot;: &quot;Delta E&quot;
+      },
+      &quot;time_h&quot;: {
+        &quot;label&quot;: &quot;Drying time&quot;,
+        &quot;unit&quot;: &quot;h&quot;
+      },
+      &quot;temperature_C&quot;: {
+        &quot;label&quot;: &quot;Drying temperature&quot;,
+        &quot;unit&quot;: &quot;deg C&quot;
+      }
+    },
+    &quot;input_name&quot;: &quot;banana_design.csv&quot;,
+    &quot;provenance&quot;: {
+      &quot;kind&quot;: &quot;bundled_example&quot;,
+      &quot;example&quot;: &quot;banana_design.csv&quot;
+    },
+    &quot;import_options&quot;: {}
+  }
+}</pre></html>

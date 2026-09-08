@@ -1,0 +1,59 @@
+[
+  {
+    "id": "D03",
+    "repository_id": "v28r4bz6s5",
+    "version": 1,
+    "title": "Dataset on photocatalytic degradation of LEVO using HAp photocatalyst Optimization by RSM",
+    "creators": [
+      "Adrian Go",
+      "Francis dela Rosa",
+      "Drexel Camacho",
+      "Eric Punzalan"
+    ],
+    "doi": "10.17632/v28r4bz6s5.1",
+    "source_url": "https://data.mendeley.com/datasets/v28r4bz6s5/1",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "checked_on": "2026-09-07",
+    "raw_data_included_in_delivery": false,
+    "downloads": [
+      {
+        "file": "LEVO_RSM.xlsx",
+        "url": "https://data.mendeley.com/public-files/datasets/v28r4bz6s5/files/6a351c2a-3cf8-4b5c-88cf-578e30c8944a/file_downloaded",
+        "bytes": 314914,
+        "sha256": "9d04295ae8e7d66f4feaf3eef83135e02b1e84e1156a74fd148fff686e52d5ba"
+      }
+    ],
+    "processed_examples_included": true,
+    "equivalent_cited_deposit": {
+      "doi": "10.17632/h82gspgkpf.2",
+      "source_url": "https://data.mendeley.com/datasets/h82gspgkpf/2",
+      "relationship": "P30 cites this deposit. Its public file metadata gives the same SHA256 and 314914-byte workbook as the bundled source deposit.",
+      "metadata_checked_on": "2026-09-07"
+    }
+  },
+  {
+    "id": "D05",
+    "repository_id": "87tfjn5s2h",
+    "version": 1,
+    "title": "Data from greenhouse solar drying using response surface methodology for the production of dried banana",
+    "creators": [
+      "Nopparat Suriyachai"
+    ],
+    "doi": "10.17632/87tfjn5s2h.1",
+    "source_url": "https://data.mendeley.com/datasets/87tfjn5s2h/1",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "checked_on": "2026-09-07",
+    "raw_data_included_in_delivery": false,
+    "downloads": [
+      {
+        "file": "Data accessibility.xlsx",
+        "url": "https://data.mendeley.com/public-files/datasets/87tfjn5s2h/files/c558268a-0c15-43f0-8598-b7f7b6a38d02/file_downloaded",
+        "bytes": 331168,
+        "sha256": "fc89166d2b63e68b398699b79bb75212d23247ffad5a92e2ef10259990c61d97"
+      }
+    ],
+    "processed_examples_included": true
+  }
+]

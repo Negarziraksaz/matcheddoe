@@ -1,0 +1,3 @@
+The selected 2fi model describes response using 15 complete runs. Fitted R² is 0.9708; residual degrees of freedom are 8. Selected responses use the same complete runs and supported candidate conditions. Inspect observed versus fitted values and residuals before using the model. Coefficient or prediction intervals appear only where residual variation and the independence declaration support them. The data and fitted coefficients remain available even when an uncertainty measure or candidate grid is unavailable.
+
+These are in-sample fits. Predicted candidate conditions are not independent confirmation experiments.
